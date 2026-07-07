@@ -1,893 +1,1187 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APAIET China Council · 中国理事会</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
+<title>APAIET · Asia-Pacific Association for International Education and Trade · 亚太国际教育和贸易协会</title>
+<meta name="description" content="APAIET is a Melbourne-incorporated association operating a project-based platform for education and trade cooperation between Australia and China. 亚太国际教育和贸易协会：连接中澳教育与贸易的项目制合作平台。">
+<meta property="og:title" content="APAIET · Asia-Pacific Association for International Education and Trade">
+<meta property="og:description" content="A project-based platform for education and trade cooperation between Australia and China. 连接中澳教育与贸易的项目制合作平台。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.apaiet.org/">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Crect width="100" height="100" rx="20" fill="%23122334"/%3E%3Ccircle cx="50" cy="50" r="33" fill="none" stroke="%23F2EFE6" stroke-width="5"/%3E%3Cpath d="M24 60 Q 44 16 78 34" fill="none" stroke="%23C9A25E" stroke-width="5" stroke-linecap="round"/%3E%3Cpath d="M76 40 Q 56 84 22 66" fill="none" stroke="%23F2EFE6" stroke-width="5" stroke-linecap="round"/%3E%3C/svg%3E'>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Asia-Pacific Association for International Education and Trade Inc.",
+  "alternateName": "亚太国际教育和贸易协会",
+  "url": "https://www.apaiet.org/",
+  "email": "info@apaiet.org",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "338 Queen Street",
+    "addressLocality": "Melbourne",
+    "addressRegion": "VIC",
+    "postalCode": "3000",
+    "addressCountry": "AU"
+  }
+}
+</script>
 <style>
-:root {
-  --bg:    #2E4A6A;
-  --bg-1:  rgba(40,62,88,0.75);
-  --bg-2:  rgba(48,72,100,0.82);
-  --bg-3:  rgba(58,84,118,0.60);
-  --navy:  #1A4F8A;
-  --mid:   #4A8FCC;
-  --sky:   #63C6FF;
-  --line:  rgba(255,255,255,0.13);
-  --line-s:rgba(255,255,255,0.24);
-  --c1:    #FFFFFF;
-  --c2:    rgba(255,255,255,0.92);
-  --c3:    rgba(255,255,255,0.65);
-  --serif: 'Noto Serif SC','Georgia','Times New Roman',serif;
-  --sans:  -apple-system,'Segoe UI',system-ui,sans-serif;
-  --ease:  cubic-bezier(0.4,0,0.2,1);
+/* ============ tokens ============ */
+:root{
+  --bg:       #14273A;
+  --bg-deep:  #0F1E2E;
+  --bg-panel: #1B3550;
+  --bg-lift:  #224060;
+  --ink:      #F2EFE6;
+  --ink-2:    #C9D2DC;
+  --ink-3:    #93A5B7;
+  --gold:     #C9A25E;
+  --gold-soft:rgba(201,162,94,0.16);
+  --line:     rgba(242,239,230,0.13);
+  --line-s:   rgba(242,239,230,0.28);
+  --serif: 'Noto Serif SC','Songti SC','STSong','Source Han Serif SC','SimSun',Georgia,'Times New Roman',serif;
+  --sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
+  --ease: cubic-bezier(0.22,0.61,0.36,1);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+*{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  font-family:var(--sans);
-  background:linear-gradient(150deg,#1B3A55 0%,#2C3E52 50%,#1E3245 100%);
-  background-attachment:fixed;
-  color:var(--c1);font-size:15px;line-height:1.75;min-height:100vh;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:1080px;margin:0 auto;padding:0 52px;}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+::selection{background:var(--gold);color:var(--bg-deep);}
+a{color:inherit;text-decoration:none;}
+img,svg{max-width:100%;display:block;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
 
-/* NAV */
-.nav-outer{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(27,58,85,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);isolation:isolate;}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-.nav-brand{display:flex;align-items:center;gap:14px;cursor:pointer;}
-.nav-logo{width:40px;height:40px;flex-shrink:0;}
-.nav-id{line-height:1.35;}
-.nav-name{font-family:var(--serif);font-size:14px;font-weight:500;color:var(--c1);letter-spacing:0.08em;}
-.nav-sub{font-size:10px;color:var(--c3);letter-spacing:0.03em;white-space:nowrap;}
-.nav-divider{display:none;}
-.nav-council{text-align:left;padding-left:12px;border-left:2px solid var(--sky);}
-.nav-council-cn{font-family:var(--serif);font-size:15px;font-weight:500;color:#fff;letter-spacing:0.12em;line-height:1.2;}
-.nav-council-en{font-size:10px;color:var(--sky);letter-spacing:0.12em;margin-top:2px;}
-/* Home page: hide nav text, logo only */
-body.page-home .nav-id,
-body.page-home .nav-divider,
-body.page-home .nav-council{display:none;}
-body.page-home .nav-brand{gap:0;}
-.nav-links{display:flex;gap:0;}
-.nb{font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:0.07em;color:var(--c2);background:none;border:none;padding:8px 15px;cursor:pointer;transition:color 0.2s;position:relative;}
-.nb::after{content:'';position:absolute;bottom:0;left:15px;right:15px;height:1px;background:var(--sky);transform:scaleX(0);transform-origin:left;transition:transform 0.2s var(--ease);}
-.nb:hover{color:var(--c1);}
-.nb:hover::after,.nb.active::after{transform:scaleX(1);}
-.nb.active{color:var(--c1);}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+.serif{font-family:var(--serif);}
 
-/* PAGE SYSTEM */
-.page{display:none;opacity:0;min-height:100vh;padding-top:72px;transition:opacity 0.3s var(--ease);}
+/* ============ nav ============ */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(15,30,46,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.nav{max-width:1180px;margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;}
+.brand .mark{width:34px;height:34px;color:var(--ink);flex:none;}
+.brand .bt{line-height:1.25;white-space:nowrap;}
+.brand .bt b{font-family:var(--serif);font-size:17px;letter-spacing:0.04em;font-weight:700;display:block;}
+.brand .bt span{font-size:10.5px;color:var(--ink-3);display:block;letter-spacing:0.02em;}
+nav.links{display:flex;align-items:center;gap:4px;}
+.nb{background:none;border:0;color:var(--ink-2);font-family:var(--sans);font-size:14px;padding:8px 12px;cursor:pointer;transition:color .2s var(--ease);white-space:nowrap;}
+.nb:hover{color:var(--ink);}
+.nb.active{color:var(--gold);}
+.nav-cta{border:1px solid var(--gold);color:var(--gold);padding:9px 18px;font-size:13.5px;margin-left:10px;cursor:pointer;background:none;font-family:var(--sans);transition:background .2s var(--ease),color .2s var(--ease);white-space:nowrap;}
+.nav-cta:hover{background:var(--gold);color:var(--bg-deep);}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:10px;}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:transform .25s var(--ease),opacity .25s var(--ease);}
+body.nav-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+body.nav-open .burger span:nth-child(2){opacity:0;}
+body.nav-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* mobile menu */
+.mmenu{display:none;}
+body.nav-open .mmenu{display:block;position:fixed;inset:68px 0 0 0;z-index:49;background:var(--bg-deep);padding:28px;overflow-y:auto;}
+.mmenu .nb{display:block;width:100%;text-align:left;font-size:19px;padding:16px 4px;border-bottom:1px solid var(--line);font-family:var(--serif);}
+.mmenu .nav-cta{margin:24px 0 0;display:inline-block;}
+
+/* ============ page shell ============ */
+.page{display:none;min-height:100vh;padding-top:68px;}
 .page.active{display:block;}
-.page.visible{opacity:1;}
-@keyframes up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-.page.visible .a1{animation:up 0.45s var(--ease) 0.05s both;}
-.page.visible .a2{animation:up 0.45s var(--ease) 0.12s both;}
-.page.visible .a3{animation:up 0.45s var(--ease) 0.19s both;}
-.page.visible .a4{animation:up 0.45s var(--ease) 0.26s both;}
-.page.visible .a5{animation:up 0.45s var(--ease) 0.32s both;}
+section{padding:96px 0;}
+section.band{background:var(--bg-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 
-/* PAGE HEADER */
-.pg-head{padding:60px 0 48px;border-bottom:1px solid var(--line);margin-bottom:60px;}
-.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);display:flex;align-items:center;gap:12px;margin-bottom:18px;}
-.eyebrow::before{content:'';width:24px;height:1px;background:var(--sky);flex-shrink:0;}
-.pg-title{font-family:var(--serif);font-size:48px;font-weight:500;color:var(--c1);line-height:1.1;margin-bottom:8px;}
-.pg-cn{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--c2);letter-spacing:0.12em;}
+/* hero load-in (one-time, CSS only; content is never gated by JS) */
+@keyframes up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.hero .idline{animation:up .5s var(--ease) .05s both;}
+.hero h1{animation:up .5s var(--ease) .14s both;}
+.hero .h1en{animation:up .5s var(--ease) .24s both;}
+.hero .sub{animation:up .5s var(--ease) .34s both;}
+.hero .ctas{animation:up .5s var(--ease) .44s both;}
+@keyframes artup{from{opacity:0;}to{opacity:0.42;}}
+.hero-art svg{animation:artup .9s var(--ease) .2s both;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .hero .idline,.hero h1,.hero .h1en,.hero .sub,.hero .ctas,.hero-art svg{animation:none;}
+}
 
-/* BUTTONS */
-.btn{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:13px 32px;border:1px solid;cursor:pointer;transition:all 0.2s var(--ease);}
-.btn-solid{background:var(--c1);color:var(--bg);border-color:var(--c1);}
-.btn-solid:hover{background:transparent;color:var(--c1);}
-.btn-outline{background:transparent;color:var(--c1);border-color:var(--line-s);}
-.btn-outline:hover{border-color:var(--c1);}
-.btn-navy{background:var(--navy);color:var(--c1);border-color:var(--navy);}
-.btn-navy:hover{background:var(--mid);border-color:var(--mid);}
+/* ============ type components ============ */
+.kicker{font-family:var(--serif);color:var(--gold);font-size:15px;letter-spacing:0.28em;margin-bottom:18px;}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.28;}
+h2.sec{font-size:clamp(26px,3.6vw,38px);margin-bottom:10px;}
+.sec-en{font-size:clamp(15px,1.6vw,18px);color:var(--ink-2);font-family:var(--serif);margin-bottom:28px;}
+.lede{max-width:68ch;color:var(--ink-2);font-size:16.5px;}
+.lede + .lede{margin-top:10px;}
+.zh-note{color:var(--ink-3);}
 
-/* LAYOUT */
-.two-col{display:grid;grid-template-columns:190px 1fr;gap:52px;margin-bottom:52px;align-items:start;}
-.tc-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--c3);padding-top:4px;line-height:2;}
-.tc-body p{font-size:15px;color:var(--c2);line-height:1.85;margin-bottom:12px;}
-.tc-body p.cn{font-family:var(--serif);font-size:14px;color:var(--c3);line-height:2;}
-.tc-body p:last-child{margin-bottom:0;}
-hr.div{border:none;border-top:1px solid var(--line);margin:56px 0;}
+/* ============ hero ============ */
+.hero{position:relative;overflow:hidden;background:var(--bg-deep);}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;padding:88px 0 84px;}
+.hero .idline{font-size:13px;color:var(--ink-3);letter-spacing:0.06em;margin-bottom:26px;}
+.hero h1{font-size:clamp(34px,5.2vw,58px);letter-spacing:0.01em;}
+.hero .h1en{font-family:var(--serif);font-size:clamp(18px,2.2vw,24px);color:var(--gold);margin-top:18px;font-weight:400;}
+.hero .sub{margin-top:26px;max-width:56ch;color:var(--ink-2);font-size:16.5px;}
+.hero .sub .zh-note{display:block;margin-top:6px;}
+.hero .ctas{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;}
+.btn{display:inline-block;font-family:var(--sans);font-size:15px;padding:14px 26px;cursor:pointer;border:1px solid var(--gold);transition:transform .15s var(--ease),background .2s var(--ease),color .2s var(--ease);}
+.btn:active{transform:translateY(1px);}
+.btn.primary{background:var(--gold);color:var(--bg-deep);font-weight:600;}
+.btn.primary:hover{background:#D5B276;}
+.btn.ghost{color:var(--ink);border-color:var(--line-s);background:none;}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero-art{position:relative;min-height:320px;display:flex;align-items:center;justify-content:center;}
+.hero-art svg{width:115%;max-width:none;color:var(--ink);opacity:0.42;}
 
-/* FOOTER */
-.foot{border-top:1px solid var(--line);padding:32px 0;margin-top:88px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
-.foot-l{font-size:12px;color:var(--c3);line-height:1.9;}
-.foot-l strong{color:var(--c2);font-weight:500;}
-.foot-r{font-size:12px;color:var(--c3);text-align:right;}
-.foot-r a{color:var(--sky);text-decoration:none;}
+/* fact strip */
+.facts{border-top:1px solid var(--line);position:relative;z-index:2;background:var(--bg-deep);}
+.facts-in{display:grid;grid-template-columns:repeat(4,1fr);}
+.fact{padding:26px 24px;border-left:1px solid var(--line);}
+.fact:first-child{border-left:0;padding-left:0;}
+.fact b{display:block;font-family:var(--serif);font-size:15.5px;font-weight:700;margin-bottom:4px;}
+.fact span{font-size:12.5px;color:var(--ink-3);line-height:1.55;display:block;}
 
-/* HOME */
-.home-grid{display:grid;grid-template-columns:1fr 340px;min-height:calc(100vh - 72px);}
-.home-main{display:flex;flex-direction:column;justify-content:center;padding:72px 72px 72px 0;border-right:1px solid var(--line);}
-.home-kicker{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--c3);display:flex;align-items:center;gap:10px;margin-bottom:28px;}
-.home-kicker-dot{width:5px;height:5px;border-radius:50%;background:var(--sky);}
-.home-h1{font-family:var(--serif);font-size:52px;font-weight:500;color:var(--c1);line-height:1.12;margin-bottom:8px;letter-spacing:0.02em;}
-.home-h1-en{font-family:var(--sans);font-size:18px;font-weight:300;color:var(--c2);letter-spacing:0.04em;margin-bottom:10px;}
-.home-parent{font-size:12px;color:var(--c3);margin-bottom:32px;display:flex;align-items:center;gap:8px;}
-.home-parent::before{content:'';width:18px;height:1px;background:var(--line-s);}
-.home-tagline{font-size:15px;font-weight:500;color:var(--sky);border-left:2px solid var(--sky);padding-left:16px;margin-bottom:18px;line-height:1.5;}
-.home-desc{font-size:14px;color:var(--c2);line-height:1.9;max-width:520px;margin-bottom:8px;}
-.home-desc-cn{font-family:var(--serif);font-size:14px;color:var(--c3);line-height:2;max-width:500px;margin-bottom:44px;}
-.home-actions{display:flex;gap:12px;flex-wrap:wrap;}
-.home-side{display:flex;flex-direction:column;justify-content:center;padding:72px 0 72px 48px;}
-.side-stats{display:flex;flex-direction:column;}
-.side-stat{padding:24px 0;border-bottom:1px solid var(--line);}
-.side-stat:first-child{border-top:1px solid var(--line);}
-.ss-idx{font-size:11px;color:var(--c3);letter-spacing:0.08em;margin-bottom:8px;}
-.ss-val{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--c1);margin-bottom:4px;line-height:1.2;}
-.ss-en{font-size:12px;color:var(--c2);margin-bottom:2px;}
-.ss-sub{font-size:12px;color:var(--c3);}
-.who-strip{border-top:1px solid var(--line);padding:40px 0;}
-.who-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--c3);margin-bottom:20px;}
-.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-.who-card{background:var(--bg-1);border:1px solid var(--line);padding:18px 16px;transition:border-color 0.2s;cursor:pointer;}
-.who-card:hover{border-color:var(--line-s);}
-.who-card-dot{width:6px;height:6px;border-radius:50%;background:var(--navy);margin-bottom:12px;}
-.who-card-en{font-size:13px;font-weight:500;color:var(--c1);margin-bottom:3px;}
-.who-card-cn{font-family:var(--serif);font-size:12px;color:var(--c3);}
-.how-strip{background:var(--bg-1);border:1px solid var(--line);padding:40px 44px;margin-top:20px;}
-.how-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--c3);margin-bottom:8px;}
-.how-text{font-size:15px;color:var(--c2);line-height:1.85;margin-bottom:6px;}
-.how-cn{font-family:var(--serif);font-size:14px;color:var(--c3);line-height:2;}
+/* ============ dual mandate ============ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px;}
+.mandate{background:var(--bg-panel);border:1px solid var(--line);padding:40px 36px;position:relative;}
+.mandate::before{content:"";position:absolute;top:0;left:0;width:56px;height:3px;background:var(--gold);}
+.mandate h3{font-size:22px;margin-bottom:6px;}
+.mandate .men{color:var(--gold);font-family:var(--serif);font-size:14.5px;margin-bottom:16px;}
+.mandate p{color:var(--ink-2);font-size:15px;}
+.mandate ul{list-style:none;margin-top:22px;border-top:1px solid var(--line);}
+.mandate li{padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink-2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.mandate li em{font-style:normal;color:var(--ink-3);font-size:13.5px;}
+.bridge{margin-top:30px;background:var(--gold-soft);border:1px solid rgba(201,162,94,0.35);padding:34px 38px;}
+.bridge p.serif{font-size:clamp(17px,2vw,21px);line-height:1.75;}
+.bridge .en{color:var(--ink-2);font-size:15px;margin-top:10px;}
 
-/* ABOUT */
-.model-block{background:var(--bg-1);border:1px solid var(--line);padding:44px 48px;margin-bottom:56px;}
-.model-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);margin-bottom:32px;}
-.model-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
-.ms{padding-right:20px;position:relative;}
-.ms:not(:last-child)::after{content:'→';position:absolute;right:2px;top:22px;font-size:16px;color:var(--line-s);}
-.ms-n{font-size:11px;color:var(--c3);letter-spacing:0.06em;margin-bottom:10px;}
-.ms-cn{font-family:var(--serif);font-size:26px;font-weight:500;color:var(--c1);line-height:1;margin-bottom:7px;}
-.ms-en{font-size:11px;color:var(--c2);letter-spacing:0.04em;}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);}
-.g3-card{background:var(--bg-1);padding:32px 28px;}
-.g3-n{font-size:36px;font-weight:300;color:var(--bg-3);line-height:1;margin-bottom:16px;}
-.g3-t{font-size:15px;font-weight:500;color:var(--c1);margin-bottom:3px;}
-.g3-cn{font-family:var(--serif);font-size:12px;color:var(--c3);margin-bottom:12px;}
-.g3-b{font-size:13px;color:var(--c2);line-height:1.85;}
+/* ============ cycle ============ */
+.cyc3{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin:44px 0 14px;}
+.cyc{padding:30px 26px;background:var(--bg-panel);border:1px solid var(--line);}
+.cyc b{font-family:var(--serif);font-size:19px;display:block;}
+.cyc .cen{color:var(--gold);font-size:13.5px;font-family:var(--serif);margin:2px 0 12px;display:block;}
+.cyc p{font-size:14px;color:var(--ink-2);}
+.cyc-arrow{display:flex;align-items:center;justify-content:center;color:var(--gold);padding:0 14px;font-size:20px;}
+.cyc-loop{color:var(--ink-3);font-size:13.5px;text-align:right;}
+.diagram-scroller{overflow-x:auto;margin-top:48px;border:1px solid var(--line);background:var(--bg-deep);}
+.diagram-scroller svg{min-width:760px;width:100%;height:auto;display:block;}
+.diagram-cap{font-size:13.5px;color:var(--ink-3);margin-top:14px;max-width:74ch;}
 
-/* SERVICES */
-.svc-list{border-top:1px solid var(--line);}
-.svc-row{display:grid;grid-template-columns:60px 220px 1fr;gap:40px;align-items:start;padding:44px 0;border-bottom:1px solid var(--line);transition:background 0.2s;}
-.svc-row:hover{background:var(--bg-1);margin:0 -52px;padding-left:52px;padding-right:52px;}
-.svc-n{font-size:36px;font-weight:300;color:var(--bg-3);line-height:1;padding-top:4px;}
-.svc-title{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--c1);margin-bottom:5px;line-height:1.2;}
-.svc-title-cn{font-size:12px;color:var(--c3);letter-spacing:0.04em;}
-.svc-desc{font-size:14px;color:var(--c2);line-height:1.9;margin-bottom:8px;}
-.svc-desc-cn{font-family:var(--serif);font-size:13px;color:var(--c3);line-height:1.9;}
-.svc-bullets{margin-top:12px;display:flex;flex-direction:column;gap:6px;}
-.svc-bullet{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--c2);}
-.svc-bullet::before{content:'·';color:var(--sky);flex-shrink:0;}
-.svc-who{margin-top:14px;font-size:12px;color:var(--sky);letter-spacing:0.03em;}
+/* ============ audiences ============ */
+.aud{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;margin-top:44px;}
+.aud .card{grid-column:span 2;background:var(--bg-panel);border:1px solid var(--line);padding:30px 26px;transition:border-color .25s var(--ease),background .25s var(--ease);}
+.aud .card:nth-child(4),.aud .card:nth-child(5){grid-column:span 3;}
+.aud .card:hover{border-color:var(--gold);background:var(--bg-lift);}
+.aud b{font-family:var(--serif);font-size:18px;display:block;}
+.aud .aen{color:var(--gold);font-size:13px;font-family:var(--serif);display:block;margin:2px 0 12px;}
+.aud p{font-size:14px;color:var(--ink-2);}
 
-/* PROJECTS */
-.proj-notice{background:var(--bg-1);border:1px solid var(--line);border-left:2px solid var(--sky);padding:18px 20px;margin-bottom:48px;font-size:13px;color:var(--c2);line-height:1.8;}
-.proj-notice .cn{font-family:var(--serif);font-size:12px;color:var(--c3);margin-top:6px;}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-.proj-card{background:var(--bg-1);border:1px solid var(--line);padding:30px 28px;transition:border-color 0.2s;}
-.proj-card:hover{border-color:var(--line-s);}
-.proj-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);border:1px solid var(--navy);padding:3px 10px;margin-bottom:16px;}
-.proj-tag.pilot{color:#B8974A;border-color:rgba(184,151,74,0.4);}
-.proj-title{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--c1);margin-bottom:4px;line-height:1.2;}
-.proj-cn{font-size:13px;color:var(--c3);margin-bottom:14px;}
-.proj-struct-label{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--c3);margin-bottom:8px;margin-top:14px;}
-.proj-struct-row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--c2);margin-bottom:5px;}
-.proj-struct-row::before{content:'·';color:var(--sky);flex-shrink:0;}
-.proj-role{font-size:12px;color:var(--c3);border-top:1px solid var(--line);padding-top:12px;margin-top:12px;line-height:1.7;}
-.proj-role strong{color:var(--c2);font-weight:500;}
+/* ============ principles ============ */
+.prin{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);margin-top:44px;}
+.pr{padding:32px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+.pr:nth-child(3n){border-right:0;}
+.pr:nth-child(n+4){border-bottom:0;}
+.pr i{font-family:var(--serif);font-style:normal;color:var(--gold);font-size:14px;display:block;margin-bottom:12px;}
+.pr b{font-family:var(--serif);font-size:17.5px;display:block;margin-bottom:2px;}
+.pr em{font-style:normal;color:var(--ink-3);font-size:13px;display:block;margin-bottom:12px;}
+.pr p{font-size:13.8px;color:var(--ink-2);}
 
-/* NETWORK */
-.net-notice{background:var(--bg-1);border:1px solid var(--line);border-left:2px solid var(--c3);padding:18px 20px;margin-bottom:48px;font-size:13px;color:var(--c2);line-height:1.8;}
-.net-notice .cn{font-family:var(--serif);font-size:12px;color:var(--c3);margin-top:6px;}
-.net-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
-.net-cell{background:var(--bg-1);padding:40px 36px;}
-.net-cell-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);display:flex;align-items:center;gap:10px;margin-bottom:22px;}
-.net-cell-label::before{content:'';width:16px;height:1px;background:var(--sky);}
-.net-cell-label span{font-family:var(--serif);font-size:13px;text-transform:none;letter-spacing:0;color:var(--c3);font-weight:400;}
-.net-tags{display:flex;flex-wrap:wrap;gap:8px;}
-.net-tag{font-size:13px;color:var(--c1);background:transparent;border:1px solid var(--line-s);padding:7px 14px;transition:border-color 0.2s;}
-.net-tag:hover{border-color:var(--c2);}
-.serve-bar{background:var(--navy);margin-top:56px;}
-.serve-bar-inner{display:grid;grid-template-columns:repeat(4,1fr);}
-.serve-item{padding:36px 40px;border-right:1px solid rgba(255,255,255,0.08);}
-.serve-item:last-child{border-right:none;}
-.si-cn{font-family:var(--serif);font-size:28px;font-weight:500;color:#fff;margin-bottom:6px;}
-.si-en{font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.04em;}
+/* ============ convening / cta band ============ */
+.conv{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:44px;align-items:center;}
+.conv h3{font-size:clamp(22px,3vw,30px);margin-bottom:14px;}
+.conv p{color:var(--ink-2);font-size:15.5px;}
+.conv .trio{border-left:1px solid var(--line-s);padding-left:36px;display:grid;gap:20px;}
+.conv .trio b{font-family:var(--serif);font-size:16.5px;display:block;}
+.conv .trio span{font-size:13px;color:var(--ink-3);}
+.textlink{color:var(--gold);font-size:14.5px;display:inline-block;margin-top:20px;border:0;border-bottom:1px solid rgba(201,162,94,0.4);padding:0 0 2px;cursor:pointer;background:none;font-family:var(--sans);}
+.textlink:hover{border-bottom-color:var(--gold);}
+.ctaband{text-align:center;padding:104px 0;}
+.ctaband h2{font-size:clamp(26px,4vw,40px);margin-bottom:12px;}
+.ctaband p{color:var(--ink-2);margin-bottom:34px;}
 
-/* COUNCIL */
-.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:56px;}
-.person-card{background:var(--bg-1);border:1px solid var(--line);padding:28px 24px;transition:border-color 0.2s;}
-.person-card:hover{border-color:var(--line-s);}
-.person-card.ph{border-style:dashed;opacity:0.55;}
-.person-av{width:48px;height:48px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;color:var(--c1);margin-bottom:18px;}
-.person-card.ph .person-av{background:var(--bg-3);}
-.p-name{font-size:16px;font-weight:500;color:var(--c1);margin-bottom:2px;}
-.p-name-cn{font-family:var(--serif);font-size:13px;color:var(--c2);margin-bottom:10px;}
-.p-role{font-size:13px;color:var(--sky);margin-bottom:2px;}
-.p-role-cn{font-family:var(--serif);font-size:12px;color:var(--c3);}
-.p-email{font-size:12px;color:var(--c3);margin-top:8px;}
-.p-email a{color:var(--sky);text-decoration:none;}
-.p-note{font-family:var(--serif);font-size:13px;color:var(--c2);line-height:1.8;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
-.join-block{background:var(--bg-1);border:1px solid var(--line);padding:48px 52px;margin-bottom:56px;}
-.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.join-title{font-family:var(--serif);font-size:30px;font-weight:500;color:var(--c1);margin-bottom:4px;line-height:1.15;}
-.join-cn{font-family:var(--serif);font-size:15px;color:var(--c2);margin-bottom:20px;}
-.join-body{font-size:14px;color:var(--c2);line-height:1.9;margin-bottom:8px;}
-.join-body-cn{font-family:var(--serif);font-size:13px;color:var(--c3);line-height:2;margin-bottom:28px;}
-.join-list{display:flex;flex-direction:column;gap:14px;}
-.jl-item{display:flex;gap:12px;align-items:flex-start;}
-.jl-dot{width:4px;height:4px;border-radius:50%;background:var(--sky);flex-shrink:0;margin-top:9px;}
-.jl-text{font-size:14px;color:var(--c2);line-height:1.7;}
-.jl-text span{display:block;font-family:var(--serif);font-size:13px;color:var(--c3);margin-top:2px;}
+/* ============ generic rows / office grid ============ */
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;padding:56px 0;border-top:1px solid var(--line);}
+.split.first{border-top:0;padding-top:24px;}
+.split h3{font-size:21px;}
+.split .shen{color:var(--gold);font-family:var(--serif);font-size:14px;margin-top:4px;}
+.split .body p{color:var(--ink-2);font-size:15.5px;}
+.split .body p + p{margin-top:12px;}
+.offices{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.off{border:1px solid var(--line);padding:24px 22px;background:var(--bg-panel);}
+.off b{font-family:var(--serif);font-size:16px;display:block;margin-bottom:2px;}
+.off i{font-style:normal;color:var(--gold);font-size:12.5px;display:block;margin-bottom:12px;font-family:var(--serif);}
+.off p{font-size:13px;color:var(--ink-2);line-height:1.65;}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);}
+.step{padding:28px 24px;border-right:1px solid var(--line);}
+.step:last-child{border-right:0;}
+.step i{font-style:normal;font-family:var(--serif);color:var(--gold);font-size:14px;display:block;margin-bottom:10px;}
+.step b{font-family:var(--serif);font-size:17px;display:block;}
+.step span{font-size:12.5px;color:var(--ink-3);display:block;margin-top:2px;}
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
-.c-section-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--c3);margin-bottom:32px;}
-.c-block{margin-bottom:36px;}
-.c-block-title{font-size:17px;font-weight:500;color:var(--c1);margin-bottom:2px;}
-.c-block-cn{font-family:var(--serif);font-size:13px;color:var(--c3);margin-bottom:18px;}
-.c-rows{display:flex;flex-direction:column;gap:13px;}
-.c-row{display:flex;gap:16px;}
-.c-lbl{font-size:11px;color:var(--c3);width:54px;flex-shrink:0;padding-top:2px;}
-.c-val{font-size:14px;color:var(--c2);line-height:1.65;}
-.c-val a{color:var(--sky);text-decoration:none;}
-.p-rows{display:flex;flex-direction:column;gap:10px;margin-top:6px;}
-.p-row{display:flex;align-items:center;gap:14px;padding:15px 17px;background:var(--bg-2);border-left:2px solid var(--navy);}
-.pr-av{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:13px;color:var(--c1);flex-shrink:0;}
-.pr-n{font-size:14px;color:var(--c1);}
-.pr-r{font-size:12px;color:var(--c3);margin-top:1px;}
-.f-group{margin-bottom:24px;}
-.f-label{display:block;font-size:11px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--c3);margin-bottom:9px;}
-.fi{width:100%;font-family:var(--sans);font-size:15px;background:transparent;color:var(--c1);border:none;border-bottom:1px solid var(--line-s);padding:9px 0;outline:none;transition:border-color 0.2s;}
-.fi:focus{border-color:var(--sky);}
-textarea.fi{resize:none;height:96px;line-height:1.7;}
-.fi::placeholder{color:var(--c3);font-size:14px;}
-.fi-select{width:100%;font-family:var(--sans);font-size:15px;background:var(--bg-1);color:var(--c1);border:1px solid var(--line-s);padding:10px 12px;outline:none;transition:border-color 0.2s;cursor:pointer;appearance:none;}
-.fi-select:focus{border-color:var(--sky);}
-.fi-select option{background:#1B3A55;}
-.f-note{font-size:12px;color:var(--c3);margin-top:18px;line-height:1.9;}
+/* ============ platform models ============ */
+.models{margin-top:44px;border-top:1px solid var(--line);}
+.model{display:grid;grid-template-columns:64px minmax(0,5fr) minmax(0,6fr);gap:32px;padding:44px 0;border-bottom:1px solid var(--line);}
+.model:last-child{border-bottom:0;}
+.model .num{font-family:var(--serif);color:var(--gold);font-size:20px;padding-top:4px;}
+.model h3{font-size:20px;}
+.model .mhen{color:var(--gold);font-family:var(--serif);font-size:14px;margin:4px 0 14px;}
+.model .desc{color:var(--ink-2);font-size:14.5px;}
+.model .fors{margin-top:16px;font-size:13px;color:var(--ink-3);}
+.model ul{list-style:none;}
+.model ul li{padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink-2);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+.model ul li:last-child{border-bottom:0;}
+.model ul li em{font-style:normal;color:var(--ink-3);font-size:13.5px;}
+.sectors{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px;}
+.sector{border:1px solid var(--line);background:var(--bg-panel);padding:28px 26px;}
+.sector.lead{grid-row:span 2;background:linear-gradient(160deg,var(--bg-lift),var(--bg-panel));border-color:var(--line-s);}
+.sector b{font-family:var(--serif);font-size:18px;display:block;}
+.sector i{font-style:normal;color:var(--gold);font-family:var(--serif);font-size:13.5px;display:block;}
+.sector p{font-size:13.8px;color:var(--ink-2);margin-top:10px;}
+.sec-note{margin-top:26px;color:var(--ink-3);font-size:13.5px;max-width:78ch;}
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .wrap{padding:0 24px;}
-  .home-grid{grid-template-columns:1fr;}
-  .home-main{padding:52px 0 40px;border-right:none;border-bottom:1px solid var(--line);}
-  .home-side{padding:36px 0 52px;}
-  .home-h1{font-size:36px;}
-  .who-grid{grid-template-columns:1fr 1fr;}
-  .two-col,.contact-grid{grid-template-columns:1fr;gap:32px;}
-  .model-steps{grid-template-columns:1fr 1fr;gap:24px;}
-  .ms::after{display:none;}
-  .grid-3,.people-grid{grid-template-columns:1fr;}
-  .svc-row{grid-template-columns:40px 1fr;gap:20px;}
-  .svc-row .svc-body-col{grid-column:1/-1;}
-  .svc-row:hover{margin:0;padding:44px 0;}
-  .proj-grid,.net-grid,.join-grid{grid-template-columns:1fr;}
-  .serve-bar-inner{grid-template-columns:1fr 1fr;}
-  .serve-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);}
-  .join-block{padding:32px 24px;}
-  .nav-links{display:none;}
-  .pg-title{font-size:34px;}
+/* ============ alliance ============ */
+.alli{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px;}
+.agroup{border:1px solid var(--line);padding:30px 28px;background:var(--bg-panel);}
+.agroup b{font-family:var(--serif);font-size:18px;display:block;}
+.agroup i{font-style:normal;color:var(--gold);font-family:var(--serif);font-size:13.5px;display:block;margin:2px 0 12px;}
+.agroup p{font-size:14px;color:var(--ink-2);}
+.disclaim{margin-top:28px;padding:22px 26px;border:1px solid var(--line);color:var(--ink-3);font-size:13.5px;background:var(--bg-deep);}
+.statuspill{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:12.5px;padding:4px 12px;margin-left:14px;vertical-align:middle;font-family:var(--sans);letter-spacing:0.06em;font-weight:400;}
+
+/* ============ network ============ */
+.net{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px;}
+.netc{border-top:2px solid var(--gold);background:var(--bg-panel);padding:28px 26px;}
+.netc b{font-family:var(--serif);font-size:17px;display:block;margin-bottom:10px;}
+.netc p{font-size:14px;color:var(--ink-2);}
+.netc p.zh-note{margin-top:8px;font-size:13.5px;}
+
+/* ============ projects ============ */
+.proj{border:1px solid var(--line);background:var(--bg-panel);margin-top:26px;padding:36px 34px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:36px;}
+.proj .head .status{font-size:12px;letter-spacing:0.08em;color:var(--gold);border:1px solid rgba(201,162,94,0.5);display:inline-block;padding:3px 10px;margin-bottom:16px;font-family:var(--sans);}
+.proj .head .status.dev{color:var(--ink-3);border-color:var(--line-s);}
+.proj h3{font-size:20px;}
+.proj .phen{color:var(--gold);font-family:var(--serif);font-size:14px;margin-top:4px;}
+.proj .body dt{font-family:var(--serif);font-size:14px;color:var(--ink-3);margin-top:18px;}
+.proj .body dt:first-child{margin-top:0;}
+.proj .body dd{font-size:14.5px;color:var(--ink-2);margin-top:4px;}
+.proj .role{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-3);}
+
+/* ============ council ============ */
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
+.area{border:1px solid var(--line);padding:28px 26px;background:var(--bg-panel);}
+.area i{font-style:normal;font-family:var(--serif);color:var(--gold);font-size:13.5px;display:block;margin-bottom:10px;}
+.area b{font-family:var(--serif);font-size:17px;display:block;}
+.area em{font-style:normal;color:var(--ink-3);font-size:12.5px;display:block;margin-bottom:10px;}
+.area p{font-size:13.5px;color:var(--ink-2);}
+
+/* ============ contact ============ */
+.contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:52px;margin-top:44px;}
+.cinfo .blk{padding:22px 0;border-bottom:1px solid var(--line);}
+.cinfo .blk:first-child{padding-top:0;}
+.cinfo .lbl{font-size:12.5px;color:var(--ink-3);letter-spacing:0.06em;margin-bottom:4px;}
+.cinfo .val{font-family:var(--serif);font-size:17px;}
+.cinfo .val a{border-bottom:1px solid rgba(201,162,94,0.45);color:var(--gold);}
+.cinfo .val small{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-2);margin-top:2px;}
+.cinfo .val .list{font-size:14.5px;font-family:var(--sans);color:var(--ink-2);line-height:2;}
+.form{background:var(--bg-panel);border:1px solid var(--line);padding:38px 36px;}
+.form h3{font-size:19px;margin-bottom:6px;}
+.form .fnote{font-size:13.5px;color:var(--ink-3);margin-bottom:26px;}
+.f-row{margin-bottom:20px;}
+.f-row label{display:block;font-size:13.5px;color:var(--ink-2);margin-bottom:8px;}
+.f-row input,.f-row select,.f-row textarea{width:100%;background:var(--bg-deep);border:1px solid var(--line-s);color:var(--ink);font-family:var(--sans);font-size:15px;padding:13px 14px;transition:border-color .2s var(--ease);}
+.f-row textarea{min-height:130px;resize:vertical;}
+.f-row input:focus,.f-row select:focus,.f-row textarea:focus{outline:none;border-color:var(--gold);}
+.form .after{font-size:13px;color:var(--ink-3);margin-top:18px;}
+.form .after a{color:var(--gold);border-bottom:1px solid rgba(201,162,94,0.45);}
+
+/* ============ footer ============ */
+footer{background:var(--bg-deep);border-top:1px solid var(--line);padding:64px 0 40px;}
+.foot{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,4fr);gap:40px;}
+.foot .mark{width:40px;height:40px;color:var(--ink);margin-bottom:16px;}
+.foot .fname{font-family:var(--serif);font-size:17px;line-height:1.5;}
+.foot .fname span{display:block;font-size:13.5px;color:var(--ink-3);}
+.foot .fmeta{margin-top:14px;font-size:12.5px;color:var(--ink-3);}
+.foot h4{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);font-weight:600;letter-spacing:0.08em;margin-bottom:14px;}
+.foot .fl{display:block;font-size:14px;color:var(--ink-2);padding:5px 0;cursor:pointer;background:none;border:0;font-family:var(--sans);text-align:left;}
+.foot .fl:hover{color:var(--gold);}
+.foot address{font-style:normal;font-size:14px;color:var(--ink-2);line-height:1.9;}
+.foot address a{color:var(--gold);}
+.legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);}
+.legal .gov{max-width:72ch;}
+
+/* ============ responsive ============ */
+@media (max-width:1024px){
+  nav.links .nb{padding:8px 8px;font-size:13.5px;}
+}
+@media (max-width:920px){
+  nav.links{display:none;}
+  .burger{display:block;}
+  .hero-in{grid-template-columns:1fr;padding:64px 0 60px;}
+  .hero-art{display:none;}
+  .facts-in{grid-template-columns:1fr 1fr;}
+  .fact{padding:20px 18px;}
+  .fact:nth-child(odd){border-left:0;padding-left:0;}
+  .duo{grid-template-columns:1fr;}
+  .cyc3{grid-template-columns:1fr;}
+  .cyc-arrow{transform:rotate(90deg);padding:10px 0;}
+  .aud{grid-template-columns:1fr;}
+  .aud .card,.aud .card:nth-child(4),.aud .card:nth-child(5){grid-column:span 1;}
+  .prin{grid-template-columns:1fr;}
+  .pr,.pr:nth-child(3n){border-right:0;border-bottom:1px solid var(--line);}
+  .pr:last-child{border-bottom:0;}
+  .conv{grid-template-columns:1fr;}
+  .conv .trio{border-left:0;padding-left:0;border-top:1px solid var(--line-s);padding-top:24px;}
+  .split{grid-template-columns:1fr;gap:18px;padding:40px 0;}
+  .offices{grid-template-columns:1fr 1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .step{border-bottom:1px solid var(--line);}
+  .step:nth-child(n+3){border-bottom:0;}
+  .step:nth-child(2n){border-right:0;}
+  .model{grid-template-columns:1fr;gap:14px;padding:36px 0;}
+  .model .num{padding-top:0;}
+  .sectors{grid-template-columns:1fr;}
+  .sector.lead{grid-row:auto;}
+  .alli,.net{grid-template-columns:1fr;}
+  .proj{grid-template-columns:1fr;gap:22px;padding:28px 24px;}
+  .areas{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .foot{grid-template-columns:1fr;}
+  section{padding:64px 0;}
+}
+@media (max-width:560px){
+  .offices{grid-template-columns:1fr;}
+  .facts-in{grid-template-columns:1fr;}
+  .fact{border-left:0;padding-left:0;border-top:1px solid var(--line);}
+  .fact:first-child{border-top:0;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<div class="nav-outer"><div class="wrap"><nav class="nav">
-  <div class="nav-brand" onclick="go('home')">
-    <img class="nav-logo" src="data:image/png;base64,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" alt="APAIET">
-    <div class="nav-id">
-      <div class="nav-name">亚太国际教育和贸易协会</div>
-      <div class="nav-sub">Asia-Pacific Association for International Education and Trade</div>
-    </div>
-    <div class="nav-divider"></div>
-    <div class="nav-council">
-      <div class="nav-council-cn">中国理事会</div>
-      <div class="nav-council-en">China Council</div>
-    </div>
-  </div>
-  <div class="nav-links">
-    <button class="nb active" onclick="go('home')">首页</button>
-    <button class="nb" onclick="go('about')">关于</button>
-    <button class="nb" onclick="go('services')">服务</button>
-    <button class="nb" onclick="go('projects')">项目</button>
-    <button class="nb" onclick="go('network')">网络</button>
-    <button class="nb" onclick="go('council')">理事会</button>
-    <button class="nb" onclick="go('contact')">联系</button>
-  </div>
-</nav></div></div>
+<!-- brand mark definition -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="apaiet-clip"><circle cx="250" cy="250" r="213"/></clipPath>
+    <g id="apaiet-mark">
+      <circle cx="250" cy="250" r="220" fill="none" stroke="currentColor" stroke-width="14"/>
+      <g clip-path="url(#apaiet-clip)">
+        <path d="M 30 370 Q 200 -60 470 130" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" opacity="0.95"/>
+        <path d="M 50 390 Q 210 -10 460 160" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+        <path d="M 75 405 Q 225 30 450 185" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" opacity="0.62"/>
+      </g>
+      <g clip-path="url(#apaiet-clip)" transform="rotate(180, 250, 250)">
+        <path d="M 30 370 Q 200 -60 470 130" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" opacity="0.95"/>
+        <path d="M 50 390 Q 210 -10 460 160" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+        <path d="M 75 405 Q 225 30 450 185" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" opacity="0.62"/>
+      </g>
+    </g>
+  </defs>
+</svg>
 
+<!-- ============ header ============ -->
+<header>
+  <div class="nav">
+    <a class="brand" href="#home" onclick="go('home');return false;">
+      <svg class="mark" viewBox="0 0 500 500" aria-hidden="true"><use href="#apaiet-mark"/></svg>
+      <span class="bt">
+        <b>APAIET</b>
+        <span>亚太国际教育和贸易协会</span>
+      </span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <button class="nb active" onclick="go('home')">首页 Home</button>
+      <button class="nb" onclick="go('about')">关于 About</button>
+      <button class="nb" onclick="go('platform')">平台 Platform</button>
+      <button class="nb" onclick="go('alliance')">联盟 Alliance</button>
+      <button class="nb" onclick="go('projects')">项目 Projects</button>
+      <button class="nb" onclick="go('council')">理事会 Council</button>
+      <button class="nb" onclick="go('contact')">联系 Contact</button>
+      <button class="nav-cta" onclick="go('contact')">发起合作</button>
+    </nav>
+    <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-<!-- HOME -->
-<div class="page active" id="page-home"><div class="wrap">
-  <div class="home-grid">
-    <div class="home-main">
-      <div class="home-kicker a1"><span class="home-kicker-dot"></span>APAIET · Asia-Pacific Association for International Education and Trade Inc.</div>
-      <h1 class="home-h1 a2">亚太国际教育<br>和贸易协会<br>中国理事会</h1>
-      <div class="home-h1-en a2">APAIET China Council</div>
-      <div class="home-parent a2">Asia-Pacific Association for International Education and Trade Inc. · Incorporated in Victoria, Australia</div>
-      <div class="home-tagline a3">A project-based platform supporting cross-border education cooperation between Australia and China.<br><span style="font-family:var(--serif);font-size:14px;font-weight:400;">中澳跨境教育合作项目平台</span></div>
-      <p class="home-desc a3">APAIET operates as a coordination platform supporting cross-border education initiatives between Australia and China. We work with institutions, industry partners, and stakeholders through programme-based collaboration — from pathway design to talent development and institutional engagement.</p>
-      <p class="home-desc-cn a3">APAIET 以项目协同平台的方式运作，通过与院校、产业及相关机构的合作，推动中澳跨境教育项目的设计与落地。</p>
-      <div class="home-actions a4">
-        <button class="btn btn-solid" onclick="go('contact')">发起合作咨询</button>
-        <button class="btn btn-outline" onclick="go('projects')">查看项目 / Projects</button>
-      </div>
-    </div>
-    <div class="home-side a3">
-      <div class="side-stats">
-        <div class="side-stat"><div class="ss-idx">i.</div><div class="ss-val">大中华区代表机构</div><div class="ss-en">Coordination Unit</div><div class="ss-sub">APAIET · Greater China</div></div>
-        <div class="side-stat"><div class="ss-idx">ii.</div><div class="ss-val">澳中双边合作</div><div class="ss-en">Australia — China</div><div class="ss-sub">Education &amp; Trade Partnership</div></div>
-        <div class="side-stat"><div class="ss-idx">iii.</div><div class="ss-val">政府 · 院校 · 企业</div><div class="ss-en">Gov · Edu · Corp</div><div class="ss-sub">理事会成员构成</div></div>
-        <div class="side-stat"><div class="ss-idx">iv.</div><div class="ss-val">338 Queen St</div><div class="ss-en">Melbourne VIC 3000, Australia</div><div class="ss-sub">澳大利亚·维多利亚州·墨尔本</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="who-strip a4">
-    <div class="who-label">Who we work with · 合作对象</div>
-    <div class="who-grid">
-      <div class="who-card" onclick="go('contact')"><div class="who-card-dot"></div><div class="who-card-en">Australian Institutions</div><div class="who-card-cn">澳洲院校</div></div>
-      <div class="who-card" onclick="go('contact')"><div class="who-card-dot"></div><div class="who-card-en">Chinese Institutions</div><div class="who-card-cn">中国院校</div></div>
-      <div class="who-card" onclick="go('contact')"><div class="who-card-dot"></div><div class="who-card-en">Government &amp; Industry</div><div class="who-card-cn">政府与产业</div></div>
-      <div class="who-card" onclick="go('contact')"><div class="who-card-dot"></div><div class="who-card-en">Students &amp; Families</div><div class="who-card-cn">学生与家庭</div></div>
-    </div>
-  </div>
-  <div class="how-strip a5">
-    <div class="how-label">How we work · 合作方式</div>
-    <p class="how-text">We operate through structured, project-based cooperation models — from pathway design and institutional matching to programme implementation and ongoing coordination.</p>
-    <p class="how-cn">我们通过项目制合作模式，从路径设计、院校对接到项目落地与持续协调，推动合作有序开展。</p>
-  </div>
-  <footer class="foot">
-    <div class="foot-l"><strong>APAIET 中国理事会 · China Council</strong><br>Asia-Pacific Association for International Education and Trade Inc. · Melbourne VIC 3000, Australia · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f49d9a929bb49584959d9180da9b8693">[email&#160;protected]</a></div>
-    <div class="foot-r">© 2025 APAIET<br><a href="http://www.apaiet.org">www.apaiet.org</a></div>
-  </footer>
-</div></div>
+<!-- mobile menu -->
+<div class="mmenu">
+  <button class="nb" onclick="go('home')">首页 Home</button>
+  <button class="nb" onclick="go('about')">关于 About</button>
+  <button class="nb" onclick="go('platform')">平台 Platform</button>
+  <button class="nb" onclick="go('alliance')">联盟 Alliance</button>
+  <button class="nb" onclick="go('projects')">项目 Projects</button>
+  <button class="nb" onclick="go('council')">理事会 Council</button>
+  <button class="nb" onclick="go('contact')">联系 Contact</button>
+  <button class="nav-cta" onclick="go('contact')">发起合作 Start a collaboration</button>
+</div>
 
+<main>
 
-<!-- ABOUT -->
-<div class="page" id="page-about"><div class="wrap">
-  <div class="pg-head">
-    <div class="eyebrow a1">关于理事会</div>
-    <div class="pg-title a2">About the Council</div>
-    <div class="pg-cn a3">协同机制与运作框架</div>
-  </div>
-  <div class="two-col a2">
-    <div class="tc-label">机构定位<br>Overview</div>
-    <div class="tc-body">
-      <p>APAIET is an incorporated association based in Melbourne, Australia. The China Council is APAIET's formal representative body for Greater China, facilitating programme development, institutional engagement, and talent pathway coordination between participants across both countries.</p>
-      <p class="cn">APAIET 是一家设立于澳大利亚墨尔本的协会组织，以协同平台的方式运作，支持中澳跨境教育项目的推进、机构对接与人才路径设计。</p>
-    </div>
-  </div>
-  <div class="two-col a3">
-    <div class="tc-label">运作机制<br>Governance</div>
-    <div class="tc-body">
-      <p>APAIET operates through a central secretariat based in Melbourne, coordinating cross-border programme initiatives. The organisation focuses on facilitating programme development, institutional engagement, and talent pathway design — working with participants on a project-based, outcome-oriented basis.</p>
-      <p class="cn">APAIET 由墨尔本秘书处统筹，通过项目制模式协同院校、产业及相关参与方，推动跨境教育项目的设计与落地。以实际需求为导向，聚焦可落地、可衡量的合作成果。</p>
-    </div>
-  </div>
-  <div class="two-col a3">
-    <div class="tc-label">全球布局<br>Offices</div>
-    <div class="tc-body">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
-        <div><div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;">Australia 澳大利亚</div><p style="font-size:13px;color:var(--c2);line-height:1.8;margin-bottom:0;">338 Queen Street<br>Melbourne VIC 3000</p></div>
-        <div><div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;">China 中国</div><p style="font-size:13px;color:var(--c2);line-height:1.8;margin-bottom:0;">成都市天府五街1577号<br>中国欧洲中心8楼<br><br>上海浦东新区松涛路563号A幢</p></div>
-        <div><div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;">Vietnam 越南</div><p style="font-size:13px;color:var(--c2);line-height:1.8;margin-bottom:0;">13-15-17 Truong Dinh St.<br>Vo Thi Sau Ward, District 3<br>Ho Chi Minh City</p></div>
-        <div><div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;">Thailand 泰国</div><p style="font-size:13px;color:var(--c2);line-height:1.8;margin-bottom:0;">197 Viphavadi-Rangsit Rd.<br>Samsen Nai, Phayathai<br>Bangkok 10400</p></div>
-      </div>
-    </div>
-  </div>
-  <div class="model-block a4">
-    <div class="model-label">Core Model · 核心运营逻辑</div>
-    <div class="model-steps">
-      <div class="ms"><div class="ms-n">01</div><div class="ms-cn">需求识别</div><div class="ms-en">Identify Demand</div></div>
-      <div class="ms"><div class="ms-n">02</div><div class="ms-cn">路径设计</div><div class="ms-en">Design Pathways</div></div>
-      <div class="ms"><div class="ms-n">03</div><div class="ms-cn">支持发展</div><div class="ms-en">Support Development</div></div>
-      <div class="ms"><div class="ms-n">04</div><div class="ms-cn">促进衔接</div><div class="ms-en">Facilitate Alignment</div></div>
-    </div>
-  </div>
-  <div class="grid-3 a4">
-    <div class="g3-card"><div class="g3-n">01</div><div class="g3-t">Platform Model</div><div class="g3-cn">平台型定位</div><div class="g3-b">资源整合而非传统中介，围绕院校、政府与产业构建多方合作网络。</div></div>
-    <div class="g3-card"><div class="g3-n">02</div><div class="g3-t">Demand-Driven</div><div class="g3-cn">需求驱动</div><div class="g3-b">从用人单位与市场的真实需求出发，反向设计教育路径与培养方案。</div></div>
-    <div class="g3-card"><div class="g3-n">03</div><div class="g3-t">Project-Based</div><div class="g3-cn">项目制运作</div><div class="g3-b">以具体项目为载体推动机构合作落地，确保执行可追踪、结果可衡量。</div></div>
-    <div class="g3-card"><div class="g3-n">04</div><div class="g3-t">Phased Execution</div><div class="g3-cn">分步推进</div><div class="g3-b">先行小规模试点，验证成效后再推进规模化，有效降低合作风险。</div></div>
-    <div class="g3-card"><div class="g3-n">05</div><div class="g3-t">Multi-stakeholder</div><div class="g3-cn">多方共赢</div><div class="g3-b">整合院校、政府、企业与商协会资源，构建各方均受益的合作生态。</div></div>
-    <div class="g3-card"><div class="g3-n">06</div><div class="g3-t">Policy Engagement</div><div class="g3-cn">政策层面对接</div><div class="g3-b">Engagement with relevant education and policy stakeholders in both Australia and China through dialogue and programme-level collaboration. · 与中澳相关教育及政策机构开展沟通与项目层面的交流合作。</div></div>
-  </div>
-  <footer class="foot">
-    <div class="foot-l"><strong>APAIET 中国理事会</strong> · Asia-Pacific Association for International Education and Trade Inc.</div>
-    <div class="foot-r">© 2025 APAIET</div>
-  </footer>
-</div></div>
+<!-- ================================================== HOME -->
+<div class="page active" id="page-home">
 
-
-<!-- SERVICES -->
-<div class="page" id="page-services"><div class="wrap">
-  <div class="pg-head">
-    <div class="eyebrow a1">合作解决方案</div>
-    <div class="pg-title a2">Solutions &amp;<br>Cooperation Models</div>
-    <div class="pg-cn a3">合作支持与项目协同</div>
-  </div>
-  <div class="svc-list">
-    <div class="svc-row a2">
-      <div class="svc-n">01</div>
-      <div><div class="svc-title">Institutional Partnership Structuring</div><div class="svc-title-cn">院校合作框架设计</div></div>
-      <div class="svc-body-col">
-        <p class="svc-desc">We support institutions in establishing structured cooperation models with measurable outcomes.</p>
-        <div class="svc-bullets"><div class="svc-bullet">Credit transfer and articulation pathways · 学分衔接路径</div><div class="svc-bullet">Joint programme development · 联合培养项目设计</div><div class="svc-bullet">Offshore delivery and training initiatives · 海外实训基地建设</div></div>
-        <div class="svc-who">适用于：中国高校、职业院校、澳洲院校</div>
-      </div>
-    </div>
-    <div class="svc-row a2">
-      <div class="svc-n">02</div>
-      <div><div class="svc-title">Education Pathway Design</div><div class="svc-title-cn">升学路径规划</div></div>
-      <div class="svc-body-col">
-        <p class="svc-desc">Design of structured pathways across diploma, undergraduate, and postgraduate levels, aligned with student profiles and institutional frameworks.</p>
-        <div class="svc-bullets"><div class="svc-bullet">Foundation / Diploma 路径</div><div class="svc-bullet">专升本 · 本升硕 衔接方案</div><div class="svc-bullet">高中直升国际大学路径</div></div>
-        <div class="svc-who">适用于：学生与家庭、中国院校</div>
-      </div>
-    </div>
-    <div class="svc-row a3">
-      <div class="svc-n">03</div>
-      <div><div class="svc-title">Cross-border Programme Coordination</div><div class="svc-title-cn">跨境项目统筹协调</div></div>
-      <div class="svc-body-col">
-        <p class="svc-desc">Coordination of cross-border programme initiatives, including institutional engagement, programme matching, and implementation support.</p>
-        <div class="svc-bullets"><div class="svc-bullet">Australian qualification framework navigation (AQF / CRICOS / TEQSA)</div><div class="svc-bullet">合作院校匹配与引荐</div><div class="svc-bullet">项目执行协调与跟进</div></div>
-        <div class="svc-who">适用于：政府机构、中澳两侧院校</div>
-      </div>
-    </div>
-    <div class="svc-row a3">
-      <div class="svc-n">04</div>
-      <div><div class="svc-title">Industry-aligned Talent Development</div><div class="svc-title-cn">产业导向人才培养</div></div>
-      <div class="svc-body-col">
-        <p class="svc-desc">Development of programmes aligned with real industry demand, supporting skills development and long-term career pathways.</p>
-        <div class="svc-bullets"><div class="svc-bullet">Community services · 社区服务领域</div><div class="svc-bullet">Education support · 教育辅助领域</div><div class="svc-bullet">Business and service industries · 商业与服务业</div></div>
-        <div class="svc-who">适用于：企业、产业合作方</div>
-      </div>
-    </div>
-    <div class="svc-row a4">
-      <div class="svc-n">05</div>
-      <div><div class="svc-title">Government Liaison &amp; Policy Support</div><div class="svc-title-cn">政府联络与政策对接</div></div>
-      <div class="svc-body-col">
-        <p class="svc-desc">Liaison support for government-level cooperation, policy interpretation, and bilateral education discussions between Australian and Chinese authorities.</p>
-        <div class="svc-bullets"><div class="svc-bullet">政策解读与合规说明</div><div class="svc-bullet">政府层面合作对接支持</div><div class="svc-bullet">双边教育协议协助</div></div>
-        <div class="svc-who">适用于：政府机构、教育主管部门</div>
-      </div>
-    </div>
-  </div>
-  <footer class="foot">
-    <div class="foot-l"><strong>APAIET 中国理事会</strong> · Asia-Pacific Association for International Education and Trade Inc.</div>
-    <div class="foot-r">© 2025 APAIET</div>
-  </footer>
-</div></div>
-
-
-<!-- PROJECTS -->
-<div class="page" id="page-projects"><div class="wrap">
-  <div class="pg-head">
-    <div class="eyebrow a1">项目与合作模式</div>
-    <div class="pg-title a2">Projects &amp;<br>Cooperation Examples</div>
-    <div class="pg-cn a3">现有合作项目</div>
-  </div>
-  <div class="proj-notice a2">
-    The following represents examples of programme types and engagement models that APAIET supports or coordinates. These are illustrative of our approach rather than specific institutional engagements. Specific arrangements remain confidential.
-    <div class="cn">以下为 APAIET 支持或协调的项目类型与合作模式示例，旨在说明工作方式，不涉及具体机构信息，相关安排依保密原则处理。</div>
-  </div>
-  <div class="proj-grid">
-    <div class="proj-card a2">
-      <div class="proj-tag">进行中 · Active</div>
-      <div class="proj-title">Sino-Australia Vocational Pathway</div>
-      <div class="proj-cn">中澳职业教育升学路径项目</div>
-      <div class="proj-struct-label">Structure · 项目结构</div>
-      <div class="proj-struct-row">Chinese vocational institutions → Australian Diploma / Bachelor pathways · 中国高职院校 → 澳洲 Diploma / 本科衔接路径</div>
-      <div class="proj-struct-label">Scope · 项目范围</div>
-      <div class="proj-struct-row">Pathway design · 路径设计</div>
-      <div class="proj-struct-row">Institutional matching · 院校对接</div>
-      <div class="proj-struct-row">Programme coordination · 项目统筹</div>
-      <div class="proj-role"><strong>APAIET Role：</strong>Project coordination and pathway structuring · 项目统筹与路径设计</div>
-    </div>
-    <div class="proj-card a2">
-      <div class="proj-tag">进行中 · Active</div>
-      <div class="proj-title">High School Transition Pathway</div>
-      <div class="proj-cn">高中直升海外升学路径项目</div>
-      <div class="proj-struct-label">Structure · 项目结构</div>
-      <div class="proj-struct-row">Chinese secondary school → Australian Foundation / Bachelor entry · 中国高中 → 澳洲 Foundation / 本科入学</div>
-      <div class="proj-struct-label">Scope · 项目范围</div>
-      <div class="proj-struct-row">School partnership structuring · 院校合作框架</div>
-      <div class="proj-struct-row">Student recruitment support · 学生招生支持</div>
-      <div class="proj-struct-row">Visa and compliance guidance · 签证与合规指引</div>
-      <div class="proj-role"><strong>APAIET Role：</strong>Partnership facilitation and student support · 合作对接与学生支持</div>
-    </div>
-    <div class="proj-card a3">
-      <div class="proj-tag pilot">试点阶段 · Pilot</div>
-      <div class="proj-title">Academic Upgrading Programme</div>
-      <div class="proj-cn">学历提升路径项目（专升本 / 本升硕）</div>
-      <div class="proj-struct-label">Structure · 项目结构</div>
-      <div class="proj-struct-row">Vocational graduates → Bachelor / Master pathways · 大专毕业生 → 本科 / 硕士衔接路径</div>
-      <div class="proj-struct-label">Scope · 项目范围</div>
-      <div class="proj-struct-row">Pathway design · 路径规划</div>
-      <div class="proj-struct-row">Institutional alignment · 院校对接</div>
-      <div class="proj-struct-row">Phased pilot rollout · 分步试点推进</div>
-      <div class="proj-role"><strong>APAIET Role：</strong>Programme design and phased implementation · 方案设计与分步落地</div>
-    </div>
-    <div class="proj-card a3">
-      <div class="proj-tag">进行中 · Active</div>
-      <div class="proj-title">Industry-linked Talent Programme</div>
-      <div class="proj-cn">产业导向人才培养项目</div>
-      <div class="proj-struct-label">Sectors · 重点行业</div>
-      <div class="proj-struct-row">Community services · 社区服务</div>
-      <div class="proj-struct-row">Education support · 教育辅助</div>
-      <div class="proj-struct-row">Business and service industries · 商业与服务业</div>
-      <div class="proj-struct-label">Scope · 项目范围</div>
-      <div class="proj-struct-row">Industry demand analysis · 产业需求分析</div>
-      <div class="proj-struct-row">Programme alignment · 培养方案对接</div>
-      <div class="proj-struct-row">Practical exposure support · 实践环节支持</div>
-      <div class="proj-role"><strong>APAIET Role：</strong>End-to-end talent pathway coordination · 全链条人才路径统筹</div>
-    </div>
-  </div>
-  <footer class="foot">
-    <div class="foot-l"><strong>APAIET 中国理事会</strong> · Asia-Pacific Association for International Education and Trade Inc.</div>
-    <div class="foot-r">© 2025 APAIET</div>
-  </footer>
-</div></div>
-
-
-<!-- NETWORK -->
-<div class="page" id="page-network"><div class="wrap">
-  <div class="pg-head">
-    <div class="eyebrow a1">合作与交流网络</div>
-    <div class="pg-title a2">Engagement Network</div>
-    <div class="pg-cn a3">机构合作生态</div>
-  </div>
-
-  <div class="net-notice a2">
-    The organisations and stakeholders listed represent entities that APAIET has engaged with through dialogue, programme development, or cooperation discussions. Inclusion does not imply formal partnership, endorsement, or contractual relationship unless otherwise specified.
-    <div class="cn">以下机构为 APAIET 在项目对接、沟通或合作探讨过程中涉及的合作网络，不代表正式合作、授权或背书关系，除非另有明确说明。</div>
-  </div>
-
-  <div class="net-grid a3">
-    <div class="net-cell">
-      <div class="net-cell-label">Australian Institutions <span>澳洲院校</span></div>
-      <div style="font-size:13px;color:var(--c2);line-height:1.85;margin-bottom:16px;">Selected higher education providers across Victoria and other Australian states, including public universities, VET providers, and registered secondary colleges engaged through programme development discussions.</div>
-      <div style="font-size:12px;color:var(--c3);font-family:var(--serif);">维州及其他地区的高等教育、职业技术及注册中学类院校，通过项目开发探讨建立合作接触。</div>
-    </div>
-    <div class="net-cell">
-      <div class="net-cell-label">Chinese Institutions <span>中国院校</span></div>
-      <div style="font-size:13px;color:var(--c2);line-height:1.85;margin-bottom:16px;">Partner institutions engaged through programme development, student pathway design, and institutional cooperation discussions — including higher education providers, vocational colleges, and secondary schools.</div>
-      <div style="font-size:12px;color:var(--c3);font-family:var(--serif);">通过项目开发、升学路径设计及院校合作探讨建立接触的高校、职业院校与中学。</div>
-    </div>
-    <div class="net-cell">
-      <div class="net-cell-label">Government &amp; Policy <span>政府与政策</span></div>
-      <div style="font-size:13px;color:var(--c2);line-height:1.85;margin-bottom:16px;">Engagement with relevant education and policy stakeholders in both Australia and China through dialogue and programme-level collaboration. APAIET participates in bilateral education discussions as a coordination facilitator.</div>
-      <div style="font-size:12px;color:var(--c3);font-family:var(--serif);">与中澳相关教育及政策机构开展沟通与项目层面交流，以协同促进者的角色参与双边教育事务。</div>
-    </div>
-    <div class="net-cell">
-      <div class="net-cell-label">Industry &amp; Trade <span>行业与商协会</span></div>
-      <div style="font-size:13px;color:var(--c2);line-height:1.85;margin-bottom:16px;">Engagement with industry associations and business organisations supporting education, talent development, and Australia-China trade initiatives across multiple sectors.</div>
-      <div style="font-size:12px;color:var(--c3);font-family:var(--serif);">与支持教育、人才发展及澳中贸易的行业协会和商业组织开展合作交流。</div>
-    </div>
-  </div>
-
-  <!-- Recruitment & Institutional Access -->
-  <div style="margin-top:48px;background:var(--bg-1);border:1px solid var(--line);padding:40px 44px;" class="a4">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+  <div class="hero">
+    <div class="wrap hero-in">
       <div>
-        <div style="font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);margin-bottom:14px;">Recruitment &amp; Institutional Access · 招生与院校资源渠道</div>
-        <p style="font-size:14px;color:var(--c2);line-height:1.9;margin-bottom:8px;">APAIET works with selected recruitment and institutional channels to support access to a wide range of Australian higher education providers — including universities, VET institutions, and pathway programmes.</p>
-        <p style="font-family:var(--serif);font-size:13px;color:var(--c3);line-height:1.9;">通过合作渠道与招生网络，支持对接澳大利亚多类型高等教育院校资源，涵盖大学、职业院校及衔接项目。</p>
-      </div>
-      <div>
-        <div style="font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);margin-bottom:14px;">Engagement Approach · 合作接触方式</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;gap:12px;font-size:13px;color:var(--c2);"><span style="color:var(--sky);flex-shrink:0;">·</span>Programme-based engagement rather than fixed institutional arrangements</div>
-          <div style="display:flex;gap:12px;font-size:13px;color:var(--c2);"><span style="color:var(--sky);flex-shrink:0;">·</span>Flexible participation aligned with specific project needs</div>
-          <div style="display:flex;gap:12px;font-size:13px;color:var(--c2);"><span style="color:var(--sky);flex-shrink:0;">·</span>Confidentiality maintained for all institutional arrangements</div>
-          <div style="display:flex;gap:12px;font-size:13px;color:var(--c3);font-family:var(--serif);"><span style="color:var(--sky);flex-shrink:0;">·</span>以项目合作为基础，灵活对接，保障各方机构安排的保密性</div>
+        <p class="idline">APAIET · Asia-Pacific Association for International Education and Trade Inc. · Incorporated in Victoria, Australia</p>
+        <h1>以教育连接贸易，<br>以人才连接中澳。</h1>
+        <p class="h1en">Education and trade, joined by talent.</p>
+        <p class="sub">
+          A project-based platform for education and trade cooperation between Australia and China.
+          <span class="zh-note">连接中澳院校、企业与相关机构的项目制跨境合作平台。</span>
+        </p>
+        <div class="ctas">
+          <button class="btn primary" onclick="go('contact')">发起合作 Start a collaboration</button>
+          <button class="btn ghost" onclick="go('platform')">了解平台 Explore the platform</button>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Global Presence -->
-  <div style="margin-top:56px;" class="a4">
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);display:flex;align-items:center;gap:12px;margin-bottom:24px;"><span style="display:inline-block;width:24px;height:1px;background:var(--sky);"></span>Project Locations &amp; Operational Presence · 项目分布与运营区域</div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);">
-      <div style="background:var(--bg-1);padding:28px 24px;"><div style="font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;">Australia</div><div style="font-family:var(--serif);font-size:17px;color:var(--c1);margin-bottom:10px;">墨尔本</div><div style="font-size:12px;color:var(--c2);line-height:1.9;">338 Queen Street<br>Melbourne VIC 3000</div></div>
-      <div style="background:var(--bg-1);padding:28px 24px;"><div style="font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;">China</div><div style="font-family:var(--serif);font-size:17px;color:var(--c1);margin-bottom:10px;">成都 · 上海</div><div style="font-size:12px;color:var(--c2);line-height:1.9;">天府五街1577号<br>中国欧洲中心8楼<br><br>浦东新区松涛路563号A幢</div></div>
-      <div style="background:var(--bg-1);padding:28px 24px;"><div style="font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;">Vietnam</div><div style="font-family:var(--serif);font-size:17px;color:var(--c1);margin-bottom:10px;">胡志明市</div><div style="font-size:12px;color:var(--c2);line-height:1.9;">13-15-17 Truong Dinh St.<br>Vo Thi Sau Ward, District 3<br>Ho Chi Minh City</div></div>
-      <div style="background:var(--bg-1);padding:28px 24px;"><div style="font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;">Thailand</div><div style="font-family:var(--serif);font-size:17px;color:var(--c1);margin-bottom:10px;">曼谷</div><div style="font-size:12px;color:var(--c2);line-height:1.9;">197 Viphavadi-Rangsit Rd.<br>Samsen Nai, Phayathai<br>Bangkok 10400</div></div>
-    </div>
-  </div>
-
-  <!-- Engagement areas strip -->
-  <div class="serve-bar a5"><div class="wrap"><div class="serve-bar-inner">
-    <div class="serve-item"><div class="si-cn">高校</div><div class="si-en">Higher Education</div></div>
-    <div class="serve-item"><div class="si-cn">职院</div><div class="si-en">VET &amp; Vocational</div></div>
-    <div class="serve-item"><div class="si-cn">产业</div><div class="si-en">Industry &amp; Enterprise</div></div>
-    <div class="serve-item"><div class="si-cn">政策</div><div class="si-en">Policy &amp; Government</div></div>
-  </div></div></div>
-
-  <footer class="foot">
-    <div class="foot-l"><strong>APAIET 中国理事会 · China Council</strong><br>Asia-Pacific Association for International Education and Trade Inc.</div>
-    <div class="foot-r">© 2025 APAIET</div>
-  </footer>
-</div></div>
-
-
-<!-- COUNCIL -->
-<div class="page" id="page-council"><div class="wrap">
-  <div class="pg-head">
-    <div class="eyebrow a1">理事会</div>
-    <div class="pg-title a2">The Council</div>
-    <div class="pg-cn a3">成员、协同机制与参与方式</div>
-  </div>
-
-  <!-- 模块一：协同机制 -->
-  <div class="two-col a2">
-    <div class="tc-label">协同机制<br>Coordination<br>Structure</div>
-    <div class="tc-body">
-      <p>The China Council operates as a project-based coordination unit within APAIET, supporting cross-border education cooperation across Australia and Greater China. It brings together participating institutions, industry partners, and relevant stakeholders to facilitate programme development, implementation, and ongoing collaboration.</p>
-      <p>Rather than functioning as a formal governing body, the Council operates through flexible, project-oriented coordination.</p>
-      <p class="cn">中国理事会作为 APAIET 体系下的项目协同单元运行，支持中澳跨境教育合作项目的组织与推进。通过联合院校、产业及相关合作方，开展项目设计、实施协调及持续合作支持。</p>
-      <p class="cn">该机制不作为独立治理机构运作，而以项目协同方式灵活推进各项合作。</p>
-    </div>
-  </div>
-
-  <hr class="div">
-
-  <!-- 模块二：运作方式 -->
-  <div class="two-col a3">
-    <div class="tc-label">运作方式<br>How It Works</div>
-    <div class="tc-body">
-      <p>The Council supports programme development through a structured, phased approach — ensuring that collaboration remains practical, scalable, and outcome-oriented.</p>
-      <p class="cn">理事会通过结构化路径支持项目开展，确保合作具备可操作性、可扩展性及结果导向。</p>
-    </div>
-  </div>
-
-  <div class="model-block a3">
-    <div class="model-label">Programme Development Process · 项目推进流程</div>
-    <div class="model-steps">
-      <div class="ms"><div class="ms-n">01</div><div class="ms-cn">需求识别</div><div class="ms-en">Identify cooperation opportunities</div></div>
-      <div class="ms"><div class="ms-n">02</div><div class="ms-cn">路径设计</div><div class="ms-en">Design education &amp; talent pathways</div></div>
-      <div class="ms"><div class="ms-n">03</div><div class="ms-cn">试点实施</div><div class="ms-en">Pilot with selected participants</div></div>
-      <div class="ms"><div class="ms-n">04</div><div class="ms-cn">评估优化</div><div class="ms-en">Evaluate and refine</div></div>
-    </div>
-  </div>
-
-  <hr class="div">
-
-  <!-- 模块三：参与主体 -->
-  <div class="two-col a3">
-    <div class="tc-label">参与主体<br>Participants</div>
-    <div class="tc-body">
-      <p>Participation in Council-supported initiatives typically includes educational institutions (universities, vocational colleges, secondary schools), industry and enterprise partners, and organisations engaged in international cooperation or talent development.</p>
-      <p>Participants engage based on specific programme needs rather than fixed membership structures.</p>
-      <p class="cn">参与理事会项目的主体通常包括各类教育机构（高校、职业院校、中学等）、产业及企业合作方，以及参与国际合作或人才培养的相关机构。</p>
-      <p class="cn">参与方式基于具体项目需求，不设固定成员编制或组织结构。</p>
-    </div>
-  </div>
-
-  <hr class="div">
-
-  <!-- 模块四：项目方向 -->
-  <div style="margin-bottom:56px;" class="a4">
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);display:flex;align-items:center;gap:12px;margin-bottom:32px;"><span style="display:inline-block;width:24px;height:1px;background:var(--sky);"></span>Programme Areas · 项目方向</div>
-    <div class="grid-3">
-      <div class="g3-card">
-        <div class="g3-n">01</div>
-        <div class="g3-t">Education Pathways</div>
-        <div class="g3-cn">跨境升学路径设计</div>
-        <div class="g3-b">Cross-border education pathway development — from Foundation and Diploma to undergraduate and postgraduate progressions. · 从 Foundation、Diploma 到本科及硕士的完整跨境升学路径设计。</div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 500 500"><use href="#apaiet-mark"/></svg>
       </div>
-      <div class="g3-card">
-        <div class="g3-n">02</div>
-        <div class="g3-t">Institutional Cooperation</div>
-        <div class="g3-cn">院校合作与项目开发</div>
-        <div class="g3-b">Structured cooperation between Australian and Chinese institutions — including programme design, credit recognition, and joint delivery. · 中澳院校结构化合作，涵盖项目设计、学分衔接与联合培养。</div>
-      </div>
-      <div class="g3-card">
-        <div class="g3-n">03</div>
-        <div class="g3-t">Talent Development</div>
-        <div class="g3-cn">产业导向人才培养</div>
-        <div class="g3-b">Industry-aligned talent development programmes connecting education outcomes with real employer demand. · 以产业需求为导向的人才培养项目，将教育成果与用人需求精准衔接。</div>
-      </div>
-      <div class="g3-card">
-        <div class="g3-n">04</div>
-        <div class="g3-t">Student Progression</div>
-        <div class="g3-cn">学生成长与职业发展</div>
-        <div class="g3-b">Student progression and career planning support across academic and professional development stages. · 覆盖学业与职业发展各阶段的学生成长支持与规划服务。</div>
-      </div>
-      <div class="g3-card">
-        <div class="g3-n">05</div>
-        <div class="g3-t">Government Liaison</div>
-        <div class="g3-cn">政府联络与政策对接</div>
-        <div class="g3-b">Support for government-level cooperation, policy interpretation, and bilateral education discussions. · 协助政府层面双边教育合作、政策解读与机构联络。</div>
-      </div>
-      <div class="g3-card">
-        <div class="g3-n">06</div>
-        <div class="g3-t">Due Diligence</div>
-        <div class="g3-cn">机构背景核查</div>
-        <div class="g3-b">Verification of institutional credentials, accreditation status and regulatory standing for reference purposes. · 协助核查机构注册状态、资质认证及合规情况，供参考使用。</div>
+    </div>
+    <div class="facts">
+      <div class="wrap facts-in">
+        <div class="fact"><b>协会注册主体</b><span>Incorporated association, Victoria, Australia</span></div>
+        <div class="fact"><b>墨尔本 + 大中华区</b><span>Melbourne secretariat, operations in Chengdu and Shanghai</span></div>
+        <div class="fact"><b>教育与贸易双轨</b><span>A dual mandate spanning education and trade</span></div>
+        <div class="fact"><b>项目制 · 结果导向</b><span>Project-based cooperation with measurable outcomes</span></div>
       </div>
     </div>
   </div>
 
-  <hr class="div">
+  <section>
+    <div class="wrap">
+      <p class="kicker">双轨定位</p>
+      <h2 class="sec">一个平台，教育与贸易两轨并行。</h2>
+      <p class="sec-en">One platform, two mandates.</p>
+      <div class="duo">
+        <div class="mandate">
+          <h3>教育合作</h3>
+          <p class="men">Education Cooperation</p>
+          <p>International education pathways, institutional partnership and industry-aligned talent development across Australia and China.<br><span class="zh-note">覆盖升学路径设计、院校合作与产业导向的人才培养。</span></p>
+          <ul>
+            <li>升学路径设计 <em>Pathway design</em></li>
+            <li>院校合作框架 <em>Institutional partnership</em></li>
+            <li>产教融合人才培养 <em>Industry-aligned talent development</em></li>
+          </ul>
+        </div>
+        <div class="mandate">
+          <h3>贸易与企业合作</h3>
+          <p class="men">Trade &amp; Enterprise Cooperation</p>
+          <p>Market-entry coordination and partnership support for enterprises operating across the Australia-China corridor.<br><span class="zh-note">为跨中澳市场发展的企业提供落地协调与合作对接支持。</span></p>
+          <ul>
+            <li>市场进入支持 <em>Market-entry support</em></li>
+            <li>产业合作对接 <em>Industry partnerships</em></li>
+            <li>跨境协调统筹 <em>Cross-border coordination</em></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bridge">
+        <p class="serif">人才是桥梁：同时理解两个市场的毕业生，正是跨境企业落地与成长所需的本地化力量。</p>
+        <p class="en">Talent is the bridge. Graduates who understand both markets become the localised workforce that cross-border enterprises need.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- 模块五：合作方式 -->
-  <div class="join-block a4">
-    <div class="join-grid">
+  <section class="band">
+    <div class="wrap">
+      <h2 class="sec">让两侧都受益的正向循环</h2>
+      <p class="sec-en">A cycle built to benefit both sides</p>
+      <p class="lede">Education attracts talent. Talent readiness supports enterprise investment. Experience and capability flow back into both markets.</p>
+      <p class="lede zh-note">教育聚才，人才为企业投资落地提供支撑，经验与能力回流两侧市场。平台的每一环，都对应中澳双方可见的实际收益。</p>
+      <p class="lede" style="margin-top:10px;">Study remains the main line throughout: programmes are education-first, and industry alignment is built around real coursework and progression.<span class="zh-note"> 学业始终是主线：项目以教育为本，产业衔接围绕真实的课程与升学展开。</span></p>
+      <div class="cyc3">
+        <div class="cyc">
+          <b>引才</b><span class="cen">Talent attraction</span>
+          <p>Students develop real academic and professional capability in Australia. 学生在澳积累真实的学业与职业能力。</p>
+        </div>
+        <div class="cyc-arrow" aria-hidden="true">→</div>
+        <div class="cyc">
+          <b>引资</b><span class="cen">Investment facilitation</span>
+          <p>A ready localised workforce lowers the barrier for enterprises establishing in Australia. 本地化人才储备降低企业赴澳落地的门槛。</p>
+        </div>
+        <div class="cyc-arrow" aria-hidden="true">→</div>
+        <div class="cyc">
+          <b>回流</b><span class="cen">Talent return</span>
+          <p>Experienced graduates support enterprises growing across markets. 有经验的毕业生反哺企业的跨市场发展。</p>
+        </div>
+      </div>
+      <p class="cyc-loop">↺ 循环往复 · and the cycle continues</p>
+
+      <div class="diagram-scroller" role="img" aria-label="APAIET four-way cooperation network diagram 四向合作网络图">
+        <svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .dt{font-family:'Noto Serif SC','Songti SC',Georgia,serif;fill:#F2EFE6;}
+            .ds{font-family:-apple-system,'PingFang SC','Segoe UI',sans-serif;fill:#93A5B7;}
+            .dbox{fill:#1B3550;stroke:rgba(242,239,230,0.22);}
+            .dline{stroke:#C9A25E;stroke-width:1.6;fill:none;}
+          </style>
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#C9A25E"/></marker>
+            <marker id="arr2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#C9A25E"/></marker>
+          </defs>
+          <rect x="255" y="36" width="450" height="64" class="dbox"/>
+          <text x="480" y="63" text-anchor="middle" class="dt" font-size="19">APAIET 协会平台</text>
+          <text x="480" y="85" text-anchor="middle" class="ds" font-size="12">Convening and coordination · 搭台与统筹</text>
+          <path class="dline" d="M340 100 V150"/><path class="dline" d="M480 100 V150"/><path class="dline" d="M620 100 V150"/>
+          <rect x="60" y="150" width="200" height="72" class="dbox"/>
+          <text x="160" y="181" text-anchor="middle" class="dt" font-size="16">澳洲院校</text>
+          <text x="160" y="202" text-anchor="middle" class="ds" font-size="11.5">Australian institutions</text>
+          <rect x="60" y="286" width="200" height="72" class="dbox"/>
+          <text x="160" y="317" text-anchor="middle" class="dt" font-size="16">中资企业</text>
+          <text x="160" y="338" text-anchor="middle" class="ds" font-size="11.5">Chinese enterprises</text>
+          <path class="dline" d="M160 222 V286" marker-end="url(#arr)" marker-start="url(#arr2)"/>
+          <text x="172" y="259" class="ds" font-size="11">定向培养 · 用人对接</text>
+          <rect x="380" y="150" width="200" height="72" class="dbox"/>
+          <text x="480" y="181" text-anchor="middle" class="dt" font-size="16">澳洲院校</text>
+          <text x="480" y="202" text-anchor="middle" class="ds" font-size="11.5">Australian institutions</text>
+          <rect x="380" y="286" width="200" height="72" class="dbox"/>
+          <text x="480" y="317" text-anchor="middle" class="dt" font-size="16">澳洲企业</text>
+          <text x="480" y="338" text-anchor="middle" class="ds" font-size="11.5">Australian enterprises</text>
+          <path class="dline" d="M480 222 V286" marker-end="url(#arr)" marker-start="url(#arr2)"/>
+          <text x="492" y="259" class="ds" font-size="11">课程合作 · 市场互通</text>
+          <rect x="700" y="150" width="200" height="72" class="dbox"/>
+          <text x="800" y="181" text-anchor="middle" class="dt" font-size="16">中国院校</text>
+          <text x="800" y="202" text-anchor="middle" class="ds" font-size="11.5">Chinese institutions</text>
+          <rect x="700" y="286" width="200" height="72" class="dbox"/>
+          <text x="800" y="317" text-anchor="middle" class="dt" font-size="16">中资企业</text>
+          <text x="800" y="338" text-anchor="middle" class="ds" font-size="11.5">Chinese enterprises</text>
+          <path class="dline" d="M800 222 V286" marker-end="url(#arr)" marker-start="url(#arr2)"/>
+          <text x="812" y="259" class="ds" font-size="11">生源培养 · 定制需求</text>
+          <path class="dline" d="M160 358 V420 H800 V358" opacity="0.55"/>
+          <rect x="130" y="440" width="700" height="64" class="dbox"/>
+          <text x="480" y="467" text-anchor="middle" class="dt" font-size="15">学生 → 本地化人才 → 企业落地 → 市场拓展</text>
+          <text x="480" y="489" text-anchor="middle" class="ds" font-size="11.5">Students grow into localised talent, supporting enterprise landing and market development</text>
+          <path class="dline" d="M480 420 V440"/>
+        </svg>
+      </div>
+      <p class="diagram-cap">四向合作网络：院校与企业在四个方向互相支撑，学生成长为本地化人才的主轴贯穿其中。A four-way cooperation network, with the growth of students into localised talent running through it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec">与谁合作</h2>
+      <p class="sec-en">Who we work with</p>
+      <div class="aud">
+        <div class="card"><b>澳洲院校</b><span class="aen">Australian Institutions</span><p>Universities, TAFE and VET providers, ELICOS colleges and registered schools. 大学、TAFE 与职业教育机构、语言学院及注册中学。</p></div>
+        <div class="card"><b>中国院校</b><span class="aen">Chinese Institutions</span><p>Higher education, vocational colleges and secondary schools across Greater China. 高校、职业院校与中学。</p></div>
+        <div class="card"><b>企业</b><span class="aen">Enterprises</span><p>Chinese enterprises entering Australia and Australian employers engaging the China market. 赴澳发展的中国企业，与开拓中国市场的澳洲企业。</p></div>
+        <div class="card"><b>政府与贸易机构</b><span class="aen">Government &amp; Trade Bodies</span><p>Education and trade-facilitation stakeholders engaged through dialogue and programme-level cooperation. 通过对话与项目层面合作开展交流的教育及贸易促进机构。</p></div>
+        <div class="card"><b>学生与家庭</b><span class="aen">Students &amp; Families</span><p>Structured pathways with clear stages and realistic expectations. 阶段清晰、预期务实的升学与成长路径。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2 class="sec">运营原则</h2>
+      <p class="sec-en">How the platform operates</p>
+      <div class="prin">
+        <div class="pr"><i>01</i><b>平台型定位</b><em>Platform Model</em><p>资源整合而非传统中介，围绕院校、政府与产业构建多方合作网络。</p></div>
+        <div class="pr"><i>02</i><b>需求驱动</b><em>Demand-Driven</em><p>从用人单位与市场的真实需求出发，反向设计教育路径与培养方案。</p></div>
+        <div class="pr"><i>03</i><b>项目制运作</b><em>Project-Based</em><p>以具体项目为载体推动机构合作落地，执行可追踪、结果可衡量。</p></div>
+        <div class="pr"><i>04</i><b>分步推进</b><em>Phased Execution</em><p>先行小规模试点，验证成效后再推进规模化，有效降低合作风险。</p></div>
+        <div class="pr"><i>05</i><b>多方共赢</b><em>Multi-stakeholder</em><p>院校、政府、企业与商协会在同一个正向循环中各有所得。</p></div>
+        <div class="pr"><i>06</i><b>政策对接</b><em>Policy Engagement</em><p>与中澳教育及政策相关机构开展沟通与项目层面的交流合作。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap conv">
       <div>
-        <div class="join-title">Start a Collaboration</div>
-        <div class="join-cn">发起合作</div>
-        <p class="join-body">Institutions and partners are welcome to participate in APAIET programmes through project-based collaboration. We focus on practical cooperation aligned with shared objectives.</p>
-        <p class="join-body-cn">欢迎院校及合作方通过项目合作方式参与 APAIET 相关项目。合作以实际需求为导向，强调可落地与长期发展。</p>
-        <button class="btn btn-navy" onclick="go('contact')">Start a Collaboration / 发起合作</button>
+        <p class="kicker">年度大会</p>
+        <h3>APAIET 年度大会 <span class="statuspill">筹备中 · In preparation</span></h3>
+        <p>A launch forum, industry roundtables and partnership signings, bringing institutions and enterprises together in Greater China each year. The inaugural convening is in preparation, planned for 2026.<br><span class="zh-note">发布论坛、产业圆桌与合作签约，每年在大中华区将院校与企业聚于一堂。首届年度大会正在筹备，拟于 2026 年举行。</span></p>
+        <button class="textlink" onclick="go('alliance')">了解联盟与大会 About the alliance and convening →</button>
       </div>
-      <div class="join-list">
-        <div class="jl-item"><div class="jl-dot"></div><div class="jl-text">Programme co-development · 项目共建<span>Joint design and delivery of education or talent programmes</span></div></div>
-        <div class="jl-item"><div class="jl-dot"></div><div class="jl-text">Institutional partnership discussions · 院校合作对接<span>Structured introductions and cooperation framework discussions</span></div></div>
-        <div class="jl-item"><div class="jl-dot"></div><div class="jl-text">Pilot project participation · 试点项目参与<span>Small-scale pilots to validate pathways before scaling</span></div></div>
-        <div class="jl-item"><div class="jl-dot"></div><div class="jl-text">Ongoing cooperation initiatives · 持续合作推进<span>Long-term coordination across active programmes</span></div></div>
+      <div class="trio">
+        <div><b>发布论坛</b><span>Launch forum: the platform, its participants and its direction</span></div>
+        <div><b>产业圆桌</b><span>Industry roundtables: institutions and enterprises at one table</span></div>
+        <div><b>签约仪式</b><span>Partnership signings: dialogue settled into cooperation</span></div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <footer class="foot">
-    <div class="foot-l"><strong>APAIET 中国理事会 · China Council</strong><br>Asia-Pacific Association for International Education and Trade Inc. · APAIET China Programme Unit · 中国项目协同单元</div>
-    <div class="foot-r">© 2025 APAIET</div>
-  </footer>
-</div></div>
+  <section class="band ctaband">
+    <div class="wrap">
+      <h2>合作，从一次对话开始。</h2>
+      <p>Begin with a conversation. We respond within 2 to 3 business days. 我们将在 2 至 3 个工作日内回复。</p>
+      <button class="btn primary" onclick="go('contact')">发起合作 Start a collaboration</button>
+    </div>
+  </section>
 
+</div>
 
-<!-- CONTACT -->
-<div class="page" id="page-contact"><div class="wrap">
-  <div class="pg-head">
-    <div class="eyebrow a1">发起项目合作</div>
-    <div class="pg-title a2">Start a Collaboration</div>
-    <div class="pg-cn a3">与 APAIET 建立合作</div>
-  </div>
+<!-- ================================================== ABOUT -->
+<div class="page" id="page-about">
+  <section>
+    <div class="wrap">
+      <p class="kicker">关于协会</p>
+      <h2 class="sec">机构定位与治理</h2>
+      <p class="sec-en">About APAIET</p>
 
-  <div class="contact-grid">
+      <div class="split first">
+        <div><h3>机构概况</h3><p class="shen">Overview</p></div>
+        <div class="body">
+          <p>APAIET, the Asia-Pacific Association for International Education and Trade Inc., is an incorporated association based in Melbourne, Australia. It operates as a project-based platform for cross-border education and trade cooperation, working with institutions, enterprises, industry partners and relevant stakeholders.</p>
+          <p class="zh-note">亚太国际教育和贸易协会（APAIET）是注册于澳大利亚墨尔本的协会组织，以项目制平台方式推动跨境教育与贸易合作，合作对象覆盖院校、企业、产业伙伴及相关机构。</p>
+          <p>The China Council is APAIET's representative body for Greater China, with operations based in Chengdu and Shanghai. It coordinates programme development, institutional engagement and talent pathway design across both countries.</p>
+          <p class="zh-note">中国理事会为协会在大中华区的代表机构，运营基地位于成都与上海，统筹两国间的项目开发、机构对接与人才路径设计。</p>
+        </div>
+      </div>
 
-    <!-- LEFT: Institutional info -->
-    <div class="a2">
-      <div class="c-section-label">联系信息 · Contact Information</div>
+      <div class="split">
+        <div><h3>双轨使命</h3><p class="shen">A dual mandate</p></div>
+        <div class="body">
+          <p>Education develops people. Trade gives that capability somewhere to land. APAIET exists to keep the two connected: education programmes are designed against real industry demand, and trade cooperation is anchored in the talent those programmes develop.</p>
+          <p class="zh-note">教育培养人才，贸易为人才提供用武之地。协会的使命是让两者始终相连：教育项目对照真实的产业需求来设计，贸易合作以项目培养出的人才为锚点。</p>
+        </div>
+      </div>
 
-      <div class="c-block">
-        <div class="c-block-title">APAIET Secretariat</div>
-        <div class="c-block-cn">协会秘书处</div>
-        <div style="font-size:12px;color:var(--sky);letter-spacing:0.04em;margin-bottom:20px;">Primary contact for all enquiries · 统一对外联系窗口</div>
-        <div class="c-rows">
-          <div class="c-row">
-            <div class="c-lbl">Australia</div>
-            <div class="c-val">Melbourne, VIC<br>Australia</div>
-          </div>
-          <div class="c-row">
-            <div class="c-lbl">China</div>
-            <div class="c-val">Chengdu · Shanghai<br>中国·成都 · 上海</div>
-          </div>
-          <div class="c-row">
-            <div class="c-lbl">Email</div>
-            <div class="c-val"><a href="mailto:info@apaiet.org">info@apaiet.org</a></div>
-          </div>
-          <div class="c-row">
-            <div class="c-lbl">Web</div>
-            <div class="c-val"><a href="http://www.apaiet.org">www.apaiet.org</a></div>
+      <div class="split">
+        <div><h3>运作机制</h3><p class="shen">Governance</p></div>
+        <div class="body">
+          <p>APAIET operates through a central secretariat based in Melbourne, coordinating cross-border programme initiatives. Participants engage on a project basis rather than through fixed membership structures, keeping cooperation practical, trackable and outcome-oriented.</p>
+          <p class="zh-note">协会由墨尔本秘书处统筹，协调各跨境项目的推进。参与方基于具体项目参与合作，不设固定成员编制，确保合作务实、可追踪、以结果为导向。</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div><h3>核心工作方法</h3><p class="shen">Core model</p></div>
+        <div class="body">
+          <div class="steps">
+            <div class="step"><i>01</i><b>需求识别</b><span>Identify demand</span></div>
+            <div class="step"><i>02</i><b>路径设计</b><span>Design pathways</span></div>
+            <div class="step"><i>03</i><b>试点实施</b><span>Pilot delivery</span></div>
+            <div class="step"><i>04</i><b>评估扩展</b><span>Evaluate and scale</span></div>
           </div>
         </div>
       </div>
 
-      <!-- Engagement areas -->
-      <div class="c-block">
-        <div class="c-block-title">Collaboration Areas</div>
-        <div class="c-block-cn">合作方向</div>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
-          <div style="display:flex;gap:12px;align-items:flex-start;">
-            <span style="color:var(--sky);flex-shrink:0;font-size:14px;">·</span>
-            <div>
-              <div style="font-size:13px;color:var(--c1);font-weight:500;">Institutional Collaboration</div>
-              <div style="font-family:var(--serif);font-size:12px;color:var(--c3);">院校合作对接</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;align-items:flex-start;">
-            <span style="color:var(--sky);flex-shrink:0;font-size:14px;">·</span>
-            <div>
-              <div style="font-size:13px;color:var(--c1);font-weight:500;">Programme Development</div>
-              <div style="font-family:var(--serif);font-size:12px;color:var(--c3);">项目开发与设计</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;align-items:flex-start;">
-            <span style="color:var(--sky);flex-shrink:0;font-size:14px;">·</span>
-            <div>
-              <div style="font-size:13px;color:var(--c1);font-weight:500;">Student Pathway Enquiry</div>
-              <div style="font-family:var(--serif);font-size:12px;color:var(--c3);">学生升学路径咨询</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;align-items:flex-start;">
-            <span style="color:var(--sky);flex-shrink:0;font-size:14px;">·</span>
-            <div>
-              <div style="font-size:13px;color:var(--c1);font-weight:500;">Policy &amp; Government Engagement</div>
-              <div style="font-family:var(--serif);font-size:12px;color:var(--c3);">政策与政府层面合作</div>
-            </div>
+      <div class="split">
+        <div><h3>全球布局</h3><p class="shen">Offices</p></div>
+        <div class="body">
+          <div class="offices">
+            <div class="off"><b>Australia</b><i>墨尔本</i><p>338 Queen Street<br>Melbourne VIC 3000</p></div>
+            <div class="off"><b>China</b><i>成都 · 上海</i><p>成都市天府五街1577号 中国欧洲中心8楼<br>上海浦东新区松涛路563号A幢</p></div>
+            <div class="off"><b>Vietnam</b><i>胡志明市</i><p>13-15-17 Truong Dinh St.<br>Vo Thi Sau Ward, District 3<br>Ho Chi Minh City</p></div>
+            <div class="off"><b>Thailand</b><i>曼谷</i><p>197 Viphavadi-Rangsit Rd.<br>Samsen Nai, Phayathai<br>Bangkok 10400</p></div>
           </div>
         </div>
       </div>
+
     </div>
+  </section>
+</div>
 
-    <!-- RIGHT: Form -->
-    <div class="a3">
-      <div class="c-section-label">提交咨询 · Submit an Enquiry</div>
-      <p style="font-size:14px;color:var(--c2);line-height:1.85;margin-bottom:28px;">We welcome collaboration enquiries from institutions and partners interested in cross-border education programmes.<br><span style="font-family:var(--serif);font-size:13px;color:var(--c3);">欢迎院校及合作方就跨境教育项目合作进行咨询。</span></p>
+<!-- ================================================== PLATFORM -->
+<div class="page" id="page-platform">
+  <section>
+    <div class="wrap">
+      <p class="kicker">合作模式</p>
+      <h2 class="sec">六类结构化合作模式</h2>
+      <p class="sec-en">Cooperation models, scoped per project</p>
+      <p class="lede">Engagement is defined project by project: clear scope, named participants, measurable outcomes. 每一项合作按项目界定范围、参与方与产出。</p>
 
-      <div class="f-group">
-        <label class="f-label">咨询类型 · Type of Enquiry</label>
-        <select class="fi-select">
-          <option value="">请选择 / Please select</option>
-          <option>Institutional Collaboration · 院校合作</option>
-          <option>Programme Development · 项目开发</option>
-          <option>Student Pathway Enquiry · 学生路径咨询</option>
-          <option>General Enquiry · 其他咨询</option>
-        </select>
+      <div class="models">
+        <div class="model">
+          <div class="num">01</div>
+          <div>
+            <h3>院校合作框架设计</h3>
+            <p class="mhen">Institutional Partnership Structuring</p>
+            <p class="desc">Structured cooperation between institutions, designed for measurable outcomes. 支持院校建立结构化、可衡量的合作框架。</p>
+            <p class="fors">适用：中国高校与职业院校、澳洲院校</p>
+          </div>
+          <ul>
+            <li>学分衔接与升学路径 <em>Credit transfer and articulation</em></li>
+            <li>联合培养项目设计 <em>Joint programme development</em></li>
+            <li>海外交付与实训项目 <em>Offshore delivery and training</em></li>
+          </ul>
+        </div>
+
+        <div class="model">
+          <div class="num">02</div>
+          <div>
+            <h3>升学路径设计</h3>
+            <p class="mhen">Education Pathway Design</p>
+            <p class="desc">Structured pathways across foundation, diploma, undergraduate and postgraduate levels, aligned with student profiles and institutional frameworks. 覆盖预科、文凭、本科与硕士阶段，贴合学生背景与院校框架。</p>
+            <p class="fors">适用：学生与家庭、中国院校</p>
+          </div>
+          <ul>
+            <li>预科与文凭入学路径 <em>Foundation and diploma routes</em></li>
+            <li>专升本、本升硕衔接 <em>Vocational-to-degree articulation</em></li>
+            <li>高中直升国际路径 <em>Secondary-to-tertiary transition</em></li>
+          </ul>
+        </div>
+
+        <div class="model">
+          <div class="num">03</div>
+          <div>
+            <h3>产业导向人才培养</h3>
+            <p class="mhen">Industry-aligned Talent Development</p>
+            <p class="desc">Programmes designed backwards from employer demand in focus sectors, developing graduates who can work across both markets. 从用人需求反向设计培养方案，培育能在两个市场胜任工作的毕业生。</p>
+            <p class="fors">适用：企业与产业合作方、院校</p>
+          </div>
+          <ul>
+            <li>赛道匹配的培养设计 <em>Sector-matched programme design</em></li>
+            <li>产教融合的学习结构 <em>Work-integrated learning structures</em></li>
+            <li>面向产业岗位的发展路径 <em>Progression into industry roles</em></li>
+          </ul>
+        </div>
+
+        <div class="model">
+          <div class="num">04</div>
+          <div>
+            <h3>企业出海与市场进入</h3>
+            <p class="mhen">Enterprise Market-Entry Support</p>
+            <p class="desc">Coordination support for Chinese enterprises establishing in Australia and Australian enterprises engaging China, anchored in talent supply and institutional cooperation. 以人才供给与院校合作为锚点，支持中国企业赴澳落地、澳洲企业开拓中国市场。</p>
+            <p class="fors">适用：中国企业、澳洲用人企业</p>
+          </div>
+          <ul>
+            <li>本地化人才对接 <em>Localised talent pipeline access</em></li>
+            <li>合作方与机构引荐 <em>Partner and institutional matching</em></li>
+            <li>落地协调与跟进 <em>Market-entry coordination</em></li>
+          </ul>
+        </div>
+
+        <div class="model">
+          <div class="num">05</div>
+          <div>
+            <h3>跨境项目统筹协调</h3>
+            <p class="mhen">Cross-border Programme Coordination</p>
+            <p class="desc">Coordination of cross-border programme initiatives, including institutional engagement, programme matching and implementation support. 统筹跨境项目的机构对接、匹配与执行支持。</p>
+            <p class="fors">适用：政府机构、中澳两侧院校</p>
+          </div>
+          <ul>
+            <li>澳洲学历资历框架导引 <em>AQF / CRICOS / TEQSA guidance</em></li>
+            <li>合作院校匹配与引荐 <em>Institutional matching</em></li>
+            <li>项目执行协调与跟进 <em>Implementation coordination</em></li>
+          </ul>
+        </div>
+
+        <div class="model">
+          <div class="num">06</div>
+          <div>
+            <h3>政府联络与政策对接</h3>
+            <p class="mhen">Government &amp; Policy Engagement</p>
+            <p class="desc">Liaison support for government-level cooperation, policy interpretation, and bilateral education and trade dialogue. 支持政府层面合作对接、政策解读与双边教育贸易交流。</p>
+            <p class="fors">适用：政府机构、教育主管部门</p>
+          </div>
+          <ul>
+            <li>政策解读与合规说明 <em>Policy interpretation and briefing</em></li>
+            <li>政府层面合作对接支持 <em>Government-level liaison</em></li>
+            <li>双边教育与贸易交流 <em>Bilateral dialogue</em></li>
+          </ul>
+        </div>
       </div>
-
-      <div class="f-group">
-        <label class="f-label">机构名称 · Organisation</label>
-        <input class="fi" type="text" placeholder="Your organisation name · 您的机构名称">
-      </div>
-
-      <div class="f-group">
-        <label class="f-label">姓名 · Name</label>
-        <input class="fi" type="text" placeholder="Your name · 您的姓名">
-      </div>
-
-      <div class="f-group">
-        <label class="f-label">邮箱 · Email</label>
-        <input class="fi" type="email" placeholder="your@email.com">
-      </div>
-
-      <div class="f-group">
-        <label class="f-label">留言 · Message</label>
-        <textarea class="fi" placeholder="Please briefly describe your organisation and the nature of your enquiry · 请简要说明您的机构及合作需求"></textarea>
-      </div>
-
-      <button class="btn btn-solid">Submit Enquiry / 提交咨询</button>
-      <div class="f-note">We will respond within 2–3 business days.<br>我们将在2–3个工作日内回复。<br><br>Or email us directly at <a href="mailto:info@apaiet.org" style="color:var(--sky);">info@apaiet.org</a></div>
     </div>
+  </section>
 
+  <section class="band">
+    <div class="wrap">
+      <h2 class="sec">重点产业方向</h2>
+      <p class="sec-en">Focus sectors</p>
+      <p class="lede">Programme and talent development concentrate where Australia-China cooperation has real structural demand. 培养与合作向中澳之间存在真实结构性需求的产业集中。</p>
+      <div class="sectors">
+        <div class="sector lead">
+          <b>健康照护与社区服务</b><i>Health, Ageing &amp; Community Care</i>
+          <p>Bilingual care capability for multicultural communities, one of the clearest structural gaps in the Australian labour market. 面向多元文化社区的双语照护能力，是澳洲劳动力市场最明确的结构性缺口之一。</p>
+        </div>
+        <div class="sector">
+          <b>跨境电商与品牌服务</b><i>Cross-border E-commerce &amp; Brand Services</i>
+          <p>Brand, channel and operations capability across both consumer markets. 面向两个消费市场的品牌、渠道与运营能力。</p>
+        </div>
+        <div class="sector">
+          <b>餐饮酒店与文旅</b><i>Culinary, Hospitality &amp; Tourism</i>
+          <p>Skills for hospitality industries serving two-way visitor and education flows. 服务双向人流与教育旅游的行业技能。</p>
+        </div>
+        <div class="sector">
+          <b>建筑与技能工种</b><i>Construction &amp; Skilled Trades</i>
+          <p>Trade skills aligned with housing and infrastructure demand. 对接住房与基建需求的技能培养。</p>
+        </div>
+        <div class="sector">
+          <b>优质食品与农业</b><i>Premium Food &amp; Agribusiness</i>
+          <p>Supply, branding and market development for high-value produce. 高价值农食产品的供应、品牌与市场开发。</p>
+        </div>
+      </div>
+      <p class="sec-note">Sector focus is reviewed periodically against market evidence and employer demand. 重点方向依据市场证据与用人需求定期检视调整。</p>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== ALLIANCE -->
+<div class="page" id="page-alliance">
+  <section>
+    <div class="wrap">
+      <p class="kicker">联盟与网络</p>
+      <h2 class="sec">跨境教育与贸易联盟 <span class="statuspill">组建中 · In formation</span></h2>
+      <p class="sec-en">A cross-border education and trade alliance, convened by APAIET</p>
+      <p class="lede">APAIET is convening an alliance that links Australian training providers, Chinese institutions, enterprises and trade-facilitation stakeholders into one platform for education and trade cooperation.</p>
+      <p class="lede zh-note">协会正在组建一个跨境联盟，把澳洲院校、中国院校、企业与贸易促进相关机构连入同一个教育与贸易合作平台。联盟构成将随参与方确认陆续公布。</p>
+
+      <div class="alli">
+        <div class="agroup">
+          <b>培养端 · 澳洲院校</b><i>Education: Australian providers</i>
+          <p>Training providers across public, private and specialist categories: TAFE institutes, higher-education groups, ELICOS and vocational colleges. 覆盖公立、私立与专业类院校：TAFE、高教集团、语言与职业院校。</p>
+        </div>
+        <div class="agroup">
+          <b>区域伙伴 · 中国与亚太院校</b><i>Regional institution partners</i>
+          <p>Chinese institution partners for delivery and student development, alongside education partners across the Asia-Pacific. 承担落地与培养的中国院校伙伴，及亚太区域教育伙伴。</p>
+        </div>
+        <div class="agroup">
+          <b>企业组 · 用人与出海企业</b><i>Enterprise group</i>
+          <p>Australian employers in focus sectors, together with Chinese enterprises developing into Australia. 重点产业的澳洲用人企业，与拟赴澳发展的中国企业。</p>
+        </div>
+        <div class="agroup">
+          <b>对话端 · 政府与贸易促进</b><i>Government &amp; trade facilitation</i>
+          <p>Ongoing dialogue with education and trade-facilitation stakeholders in both countries. 与两国教育及贸易促进相关机构保持沟通与交流。</p>
+        </div>
+      </div>
+
+      <div class="disclaim">
+        Alliance participation is confirmed bilaterally with each organisation. Nothing on this page implies participation, endorsement or partnership by any organisation not expressly announced. 联盟参与以协会与各机构的双向确认为准；本页内容不构成对任何机构参与、背书或合作关系的暗示。
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap conv">
+      <div>
+        <p class="kicker">年度大会</p>
+        <h3>APAIET 年度大会 <span class="statuspill">筹备中 · In preparation</span></h3>
+        <p>One flagship convening each year in Greater China: a launch forum presenting the platform, industry roundtables connecting institutions with enterprises, and a signing ceremony that settles dialogue into concrete cooperation. The inaugural convening is planned for 2026; details will be shared with participating organisations first.</p>
+        <p class="zh-note" style="margin-top:10px;">每年在大中华区举行一场旗舰大会：发布论坛呈现平台与方向，产业圆桌把院校与企业聚在同一张桌上，签约仪式把对话沉淀为具体合作。首届大会拟于 2026 年举行，具体信息将优先向参与机构发布。</p>
+        <button class="textlink" onclick="go('contact')">咨询参与方式 Enquire about participating →</button>
+      </div>
+      <div class="trio">
+        <div><b>发布论坛</b><span>Launch forum 平台与参与方亮相</span></div>
+        <div><b>产业圆桌</b><span>Industry roundtables 校企同桌对接</span></div>
+        <div><b>签约仪式</b><span>Partnership signings 合作落笔为据</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec">合作与交流网络</h2>
+      <p class="sec-en">Engagement network</p>
+      <p class="lede">The organisations and stakeholders described below represent entities that APAIET has engaged with through dialogue, programme development, or cooperation discussions. Inclusion does not imply formal partnership, endorsement, or contractual relationship unless otherwise specified.</p>
+      <p class="lede zh-note">以下机构类别为协会在项目对接、沟通或合作探讨中涉及的网络，不代表正式合作、授权或背书关系，除非另有明确说明。</p>
+      <div class="net">
+        <div class="netc">
+          <b>澳洲院校 Australian Institutions</b>
+          <p>Selected higher education providers across Victoria and other Australian states, including public universities, VET providers, and registered secondary colleges engaged through programme development discussions.</p>
+          <p class="zh-note">维州及其他地区的高等教育、职业技术及注册中学类院校，通过项目开发探讨建立合作接触。</p>
+        </div>
+        <div class="netc">
+          <b>中国院校 Chinese Institutions</b>
+          <p>Partner institutions engaged through programme development, student pathway design, and institutional cooperation discussions, including higher education providers, vocational colleges, and secondary schools.</p>
+          <p class="zh-note">通过项目开发、升学路径设计及院校合作探讨建立接触的高校、职业院校与中学。</p>
+        </div>
+        <div class="netc">
+          <b>政府与政策 Government &amp; Policy</b>
+          <p>Engagement with relevant education and policy stakeholders in both Australia and China through dialogue and programme-level collaboration. APAIET participates in bilateral education discussions as a coordination facilitator.</p>
+          <p class="zh-note">与中澳相关教育及政策机构开展沟通与项目层面交流，以协同促进者的角色参与双边教育事务。</p>
+        </div>
+        <div class="netc">
+          <b>行业与商协会 Industry &amp; Trade</b>
+          <p>Engagement with industry associations and business organisations supporting education, talent development, and Australia-China trade initiatives across multiple sectors.</p>
+          <p class="zh-note">与支持教育、人才发展及澳中贸易的行业协会和商业组织开展合作交流。</p>
+        </div>
+      </div>
+      <div class="disclaim">
+        Engagement approach: programme-based engagement rather than fixed institutional arrangements; flexible participation aligned with specific project needs; confidentiality maintained for all institutional arrangements. 合作方式：以项目合作为基础、按需灵活参与，各方机构安排均予保密。
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== PROJECTS -->
+<div class="page" id="page-projects">
+  <section>
+    <div class="wrap">
+      <p class="kicker">项目与合作模式</p>
+      <h2 class="sec">项目类型与合作示例</h2>
+      <p class="sec-en">Projects and cooperation examples</p>
+      <p class="lede">The following outlines programme types that APAIET currently supports or coordinates, presented in generalised form. Specific institutional arrangements remain confidential and are not identified here.</p>
+      <p class="lede zh-note">以下为协会当前支持或协调的项目类型，以概括形式呈现；具体机构与合作安排依保密原则处理，不在此列明。</p>
+
+      <div class="proj">
+        <div class="head">
+          <span class="status">进行中 · Active</span>
+          <h3>中澳职业教育升学路径项目</h3>
+          <p class="phen">Sino-Australia Vocational Pathway</p>
+        </div>
+        <dl class="body">
+          <dt>项目结构 Structure</dt>
+          <dd>Chinese vocational institutions progressing into Australian diploma and bachelor pathways. 中国高职院校对接澳洲文凭与本科衔接路径。</dd>
+          <dt>项目范围 Scope</dt>
+          <dd>路径设计 Pathway design · 院校对接 Institutional matching · 项目统筹 Programme coordination</dd>
+          <dd class="role">APAIET 角色：项目统筹与路径设计 Project coordination and pathway structuring</dd>
+        </dl>
+      </div>
+
+      <div class="proj">
+        <div class="head">
+          <span class="status">进行中 · Active</span>
+          <h3>高中直升海外升学路径项目</h3>
+          <p class="phen">High School Transition Pathway</p>
+        </div>
+        <dl class="body">
+          <dt>项目结构 Structure</dt>
+          <dd>Chinese secondary school graduates entering Australian foundation and bachelor programmes. 中国高中对接澳洲预科与本科入学。</dd>
+          <dt>项目范围 Scope</dt>
+          <dd>院校合作框架 School partnership structuring · 学生招生支持 Student recruitment support · 入学协调与行前准备 Enrolment coordination and pre-departure preparation</dd>
+          <dd class="role">APAIET 角色：合作对接与学生支持 Partnership facilitation and student support</dd>
+        </dl>
+      </div>
+
+      <div class="proj">
+        <div class="head">
+          <span class="status">试点阶段 · Pilot</span>
+          <h3>学历提升路径项目</h3>
+          <p class="phen">Academic Upgrading Programme</p>
+        </div>
+        <dl class="body">
+          <dt>项目结构 Structure</dt>
+          <dd>Vocational graduates progressing into bachelor and master pathways. 大专毕业生对接本科与硕士衔接路径（专升本、本升硕）。</dd>
+          <dt>项目范围 Scope</dt>
+          <dd>路径规划 Pathway design · 院校对接 Institutional alignment · 分步试点推进 Phased pilot rollout</dd>
+          <dd class="role">APAIET 角色：方案设计与分步落地 Programme design and phased implementation</dd>
+        </dl>
+      </div>
+
+      <div class="proj">
+        <div class="head">
+          <span class="status">进行中 · Active</span>
+          <h3>产业导向人才培养项目</h3>
+          <p class="phen">Industry-linked Talent Programme</p>
+        </div>
+        <dl class="body">
+          <dt>重点方向 Sectors</dt>
+          <dd>健康照护与社区服务 Health &amp; community care · 餐饮酒店与文旅 Hospitality &amp; tourism · 商业与数字贸易 Business &amp; digital trade</dd>
+          <dt>项目范围 Scope</dt>
+          <dd>产业需求分析 Industry demand analysis · 培养方案对接 Programme alignment · 产教融合支持 Work-integrated learning support</dd>
+          <dd class="role">APAIET 角色：全链条人才路径统筹 End-to-end talent pathway coordination</dd>
+        </dl>
+      </div>
+
+      <div class="proj">
+        <div class="head">
+          <span class="status dev">筹备中 · In development</span>
+          <h3>企业人才与落地支持项目</h3>
+          <p class="phen">Enterprise Talent &amp; Landing Programme</p>
+        </div>
+        <dl class="body">
+          <dt>项目结构 Structure</dt>
+          <dd>Talent pipeline and landing coordination for enterprises establishing across the Australia-China corridor. 为跨中澳市场落地的企业构建人才管道与落地协调支持。</dd>
+          <dt>项目范围 Scope</dt>
+          <dd>赛道人才匹配 Sector talent matching · 机构与合作方引荐 Institutional and partner introductions · 落地协调 Landing coordination</dd>
+          <dd class="role">APAIET 角色：平台搭台与统筹 Platform convening and coordination</dd>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== COUNCIL -->
+<div class="page" id="page-council">
+  <section>
+    <div class="wrap">
+      <p class="kicker">中国理事会</p>
+      <h2 class="sec">协同机制与参与方式</h2>
+      <p class="sec-en">The China Council</p>
+
+      <div class="split first">
+        <div><h3>协同机制</h3><p class="shen">Coordination structure</p></div>
+        <div class="body">
+          <p>The China Council operates as a project-based coordination unit within APAIET, supporting cross-border education and trade cooperation across Australia and Greater China. It brings together participating institutions, industry partners and relevant stakeholders to facilitate programme development, implementation and ongoing collaboration.</p>
+          <p class="zh-note">中国理事会作为协会体系下的项目协同单元运行，支持中澳跨境教育与贸易合作的组织与推进，联合院校、产业及相关合作方开展项目设计、实施协调与持续合作。</p>
+          <p>Rather than functioning as a formal governing body, the Council operates through flexible, project-oriented coordination.</p>
+          <p class="zh-note">该机制不作为独立治理机构运作，而以项目协同方式灵活推进各项合作。</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div><h3>运作方式</h3><p class="shen">How it works</p></div>
+        <div class="body">
+          <p>The Council supports programme development through a structured, phased approach, keeping collaboration practical, scalable and outcome-oriented. 理事会通过结构化路径支持项目开展，确保合作可操作、可扩展、以结果为导向。</p>
+          <div class="steps" style="margin-top:22px;">
+            <div class="step"><i>01</i><b>需求识别</b><span>Identify cooperation opportunities</span></div>
+            <div class="step"><i>02</i><b>路径设计</b><span>Design education and talent pathways</span></div>
+            <div class="step"><i>03</i><b>试点实施</b><span>Pilot with selected participants</span></div>
+            <div class="step"><i>04</i><b>评估优化</b><span>Evaluate and refine</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split">
+        <div><h3>参与主体</h3><p class="shen">Participants</p></div>
+        <div class="body">
+          <p>Participation in Council-supported initiatives typically includes educational institutions (universities, vocational colleges, secondary schools), industry and enterprise partners, and organisations engaged in international cooperation or talent development. Participants engage based on specific programme needs rather than fixed membership structures.</p>
+          <p class="zh-note">参与理事会项目的主体通常包括各类教育机构（高校、职业院校、中学等）、产业及企业合作方，以及参与国际合作或人才培养的相关机构。参与方式基于具体项目需求，不设固定成员编制。</p>
+        </div>
+      </div>
+
+      <h2 class="sec" style="margin-top:64px;">项目方向</h2>
+      <p class="sec-en">Programme areas</p>
+      <div class="areas">
+        <div class="area"><i>01</i><b>跨境升学路径</b><em>Education Pathways</em><p>从预科、文凭到本科及硕士的完整跨境升学路径设计，含学业各阶段的成长与规划支持。</p></div>
+        <div class="area"><i>02</i><b>院校合作与项目开发</b><em>Institutional Cooperation</em><p>中澳院校结构化合作，涵盖项目设计、学分衔接与联合培养。</p></div>
+        <div class="area"><i>03</i><b>产业导向人才培养</b><em>Industry Talent Development</em><p>以产业需求为导向的人才培养项目，将教育成果与用人需求精准衔接。</p></div>
+        <div class="area"><i>04</i><b>企业与贸易合作</b><em>Enterprise &amp; Trade Cooperation</em><p>企业跨境落地协调与产业合作对接，让教育合作与贸易合作互为支撑。</p></div>
+        <div class="area"><i>05</i><b>政府联络与政策对接</b><em>Government Liaison</em><p>协助政府层面双边教育与贸易合作、政策解读与机构联络。</p></div>
+        <div class="area"><i>06</i><b>机构背景核查</b><em>Due Diligence</em><p>协助核查机构注册状态、资质认证及合规情况，供参考使用。</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== CONTACT -->
+<div class="page" id="page-contact">
+  <section>
+    <div class="wrap">
+      <p class="kicker">发起合作</p>
+      <h2 class="sec">与协会建立联系</h2>
+      <p class="sec-en">Start a collaboration</p>
+      <p class="lede">Institutions, enterprises and partners are welcome to participate in APAIET programmes through project-based collaboration. 欢迎院校、企业及合作方通过项目合作方式参与协会相关项目。</p>
+
+      <div class="contact-grid">
+        <div class="cinfo">
+          <div class="blk">
+            <p class="lbl">秘书处 Secretariat</p>
+            <p class="val">APAIET Secretariat<small>统一对外联系窗口 Primary contact for all enquiries</small></p>
+          </div>
+          <div class="blk">
+            <p class="lbl">澳大利亚 Australia</p>
+            <p class="val">Melbourne, VIC<small>338 Queen Street, Melbourne VIC 3000</small></p>
+          </div>
+          <div class="blk">
+            <p class="lbl">中国 China</p>
+            <p class="val">成都 · 上海<small>Chengdu and Shanghai</small></p>
+          </div>
+          <div class="blk">
+            <p class="lbl">邮箱 Email</p>
+            <p class="val"><a href="mailto:info@apaiet.org">info@apaiet.org</a></p>
+          </div>
+          <div class="blk">
+            <p class="lbl">合作方向 Collaboration areas</p>
+            <p class="val"><span class="list">院校合作对接 Institutional collaboration<br>项目开发与设计 Programme development<br>企业与贸易合作 Enterprise &amp; trade cooperation<br>学生升学路径咨询 Student pathway enquiry<br>政策与政府层面合作 Policy &amp; government engagement</span></p>
+          </div>
+        </div>
+
+        <form class="form" id="enquiryForm">
+          <h3>提交咨询</h3>
+          <p class="fnote">Submit an enquiry. This opens your email client with a pre-filled message to the secretariat. 提交后将打开您的邮件客户端，向秘书处发送预填好的邮件。</p>
+          <div class="f-row">
+            <label for="f-type">咨询类型 Type of enquiry</label>
+            <select id="f-type">
+              <option>院校合作 Institutional Collaboration</option>
+              <option>项目开发 Programme Development</option>
+              <option>企业与贸易合作 Enterprise &amp; Trade Cooperation</option>
+              <option>学生路径咨询 Student Pathway Enquiry</option>
+              <option>其他咨询 General Enquiry</option>
+            </select>
+          </div>
+          <div class="f-row">
+            <label for="f-org">机构名称 Organisation</label>
+            <input id="f-org" type="text" autocomplete="organization">
+          </div>
+          <div class="f-row">
+            <label for="f-name">姓名 Name</label>
+            <input id="f-name" type="text" autocomplete="name">
+          </div>
+          <div class="f-row">
+            <label for="f-email">邮箱 Email</label>
+            <input id="f-email" type="email" autocomplete="email">
+          </div>
+          <div class="f-row">
+            <label for="f-msg">留言 Message</label>
+            <textarea id="f-msg"></textarea>
+          </div>
+          <button type="submit" class="btn primary">发送咨询 Send enquiry</button>
+          <p class="after">We respond within 2 to 3 business days. 我们将在 2 至 3 个工作日内回复。<br>Or email directly 或直接致函：<a href="mailto:info@apaiet.org">info@apaiet.org</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<!-- ============ footer ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <svg class="mark" viewBox="0 0 500 500" aria-hidden="true"><use href="#apaiet-mark"/></svg>
+        <p class="fname">亚太国际教育和贸易协会<span>Asia-Pacific Association for International Education and Trade Inc.</span></p>
+        <p class="fmeta">Incorporated in Victoria, Australia · 澳大利亚维多利亚州注册协会</p>
+      </div>
+      <div>
+        <h4>导航 Navigate</h4>
+        <button class="fl" onclick="go('about')">关于 About</button>
+        <button class="fl" onclick="go('platform')">平台 Platform</button>
+        <button class="fl" onclick="go('alliance')">联盟 Alliance</button>
+        <button class="fl" onclick="go('projects')">项目 Projects</button>
+        <button class="fl" onclick="go('council')">理事会 Council</button>
+        <button class="fl" onclick="go('contact')">联系 Contact</button>
+      </div>
+      <div>
+        <h4>联络 Contact</h4>
+        <address>
+          338 Queen Street, Melbourne VIC 3000, Australia<br>
+          成都 · 上海 Chengdu · Shanghai<br>
+          <a href="mailto:info@apaiet.org">info@apaiet.org</a><br>
+          www.apaiet.org
+        </address>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 APAIET · Asia-Pacific Association for International Education and Trade Inc.</p>
+      <p class="gov">Programme information on this site describes cooperation models and engagement approaches; it does not constitute an offer, endorsement, or guarantee of outcomes. 本站信息用于说明合作模式与参与方式，不构成要约、背书或结果承诺。</p>
+    </div>
   </div>
-
-  <footer class="foot">
-    <div class="foot-l"><strong>APAIET · Asia-Pacific Association for International Education and Trade Inc.</strong><br>Melbourne, Australia · info@apaiet.org · www.apaiet.org</div>
-    <div class="foot-r">© 2025 APAIET<br><a href="http://www.apaiet.org">www.apaiet.org</a></div>
-  </footer>
-</div></div>
-
-
+</footer>
 
 <script>
-function go(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active','visible'));
-  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+/* router */
+var PAGES=['home','about','platform','alliance','projects','council','contact'];
+function go(id,skipHash){
+  if(PAGES.indexOf(id)<0)id='home';
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
   var pg=document.getElementById('page-'+id);
-  if(!pg)return;
   pg.classList.add('active');
-  requestAnimationFrame(function(){requestAnimationFrame(function(){pg.classList.add('visible');});});
-  window.scrollTo({top:0,behavior:'smooth'});
   document.querySelectorAll('.nb').forEach(function(b){
-    if(b.getAttribute('onclick')==="go('"+id+"')")b.classList.add('active');
+    b.classList.toggle('active',(b.getAttribute('onclick')||'').indexOf("go('"+id+"')")>=0);
   });
-  document.body.className = id==='home' ? 'page-home' : '';
+  document.body.classList.remove('nav-open');
+  if(!skipHash && ('#'+id)!==location.hash){history.pushState(null,'','#'+id);}
+  window.scrollTo({top:0,behavior:'auto'});
 }
-requestAnimationFrame(function(){requestAnimationFrame(function(){
-  document.getElementById('page-home').classList.add('visible');
-  document.body.className = 'page-home';
-});});
+function fromHash(){
+  var h=(location.hash||'#home').replace('#','').replace('/','');
+  go(h,true);
+}
+window.addEventListener('popstate',fromHash);
+
+/* enquiry form: opens the visitor's own email client, pre-filled */
+document.getElementById('enquiryForm').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var t=document.getElementById('f-type').value;
+  var o=document.getElementById('f-org').value||'-';
+  var n=document.getElementById('f-name').value||'-';
+  var e=document.getElementById('f-email').value||'-';
+  var m=document.getElementById('f-msg').value||'-';
+  var subject='[Website Enquiry] '+t+(o!=='-'?(' | '+o):'');
+  var body='Type 咨询类型: '+t+'\nOrganisation 机构: '+o+'\nName 姓名: '+n+'\nEmail 邮箱: '+e+'\n\nMessage 留言:\n'+m;
+  location.href='mailto:info@apaiet.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+});
+
+/* boot */
+fromHash();
 </script>
+
 </body>
 </html>
